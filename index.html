@@ -300,9 +300,9 @@ nav{
 .modb .modsub{font-size:0.94rem;color:var(--light);margin-bottom:4px;}
 .modb p{font-size:0.92rem;color:var(--muted);line-height:1.42;margin-bottom:3px;}
 .specs{display:flex;flex-direction:column;gap:2px;}
-.spec{display:flex;justify-content:space-between;font-size:0.96rem;padding:1px 0;border-bottom:1px solid #eee;}
-.spec span:first-child{color:var(--muted);}
-.spec span:last-child{color:var(--text);font-weight:600;}
+.spec{display:flex;justify-content:space-between;font-size:0.96rem;padding:1px 0;border-bottom:1px solid #eee;gap:8px;}
+.spec span:first-child{color:var(--muted);white-space:nowrap;}
+.spec span:last-child{color:var(--text);font-weight:600;text-align:right;}
 
 .badge{
   display:inline-block;
@@ -776,11 +776,11 @@ img.clicavel:hover{filter:brightness(1.05);}
         <div class="c cv" style="padding:0.4rem 0.65rem;">
           <h3 style="color:var(--grn);">✓ Alma Lisa — A mais comum</h3>
           <p>O interior do cano é <strong>liso, sem raiamento</strong>. Lança múltiplos balins (bolinhas de chumbo) de uma vez.<br>
-          <strong>Usada em:</strong> caça · tiro esportivo (trap/skeet) · defesa residencial · uso policial.</p>
+          <strong>Usada em:</strong> caça · tiro esportivo (trap/skeet — tiro ao prato) · defesa residencial · uso policial.</p>
         </div>
         <div class="c ca" style="padding:0.4rem 0.65rem;">
           <h3>〰 Alma Raiada — Menos comum</h3>
-          <p>O cano possui <strong>ranhuras internas (raias)</strong> que fazem o projétil girar, aumentando estabilidade e precisão. Usada para disparar <strong>slug (projétil único)</strong>.<br>
+          <p>O cano possui <strong>ranhuras internas (raias)</strong> que fazem o projétil girar, aumentando estabilidade e precisão. Usada para disparar <strong>slug/balote (projétil único)</strong>.<br>
           <strong>Uso:</strong> caça de animais maiores · tiros mais precisos com espingarda.</p>
         </div>
         <div class="qt" style="padding:0.4rem 0.7rem;">
@@ -813,8 +813,8 @@ img.clicavel:hover{filter:brightness(1.05);}
           <h3>🔑 O que significa "Uso Permitido (B)"?</h3>
           <p>Conforme o <strong>Decreto nº 9.847/2019</strong>, a espingarda cal.12 em configuração civil padrão (cano ≥ 24", capacidade original de fábrica) é de <strong>Uso Permitido</strong>. O cidadão pode adquirir e registrar cumprindo: capacitação técnica, registro no Exército, idoneidade comprovada e residência fixa.</p>
         </div>
-        <div class="alerta">
-          <p>⚠️ <strong>Atenção:</strong> Cano muito curto ou acessórios militares específicos podem alterar a classificação para <em>Uso Restrito (A)</em> — somente policiais. Sempre consulte a legislação antes de qualquer modificação.</p>
+        <div class="alerta" style="padding:0.5rem 0.7rem;border-width:2px;">
+          <p>⚠️ <strong>ATENÇÃO:</strong> Cano muito curto ou acessórios militares específicos podem <strong>alterar a classificação para Uso Restrito (A)</strong> — somente policiais. Sempre consulte a legislação antes de qualquer modificação na arma.</p>
         </div>
         <div class="c cg">
           <h3>🏛️ Base Legal</h3>
@@ -822,20 +822,17 @@ img.clicavel:hover{filter:brightness(1.05);}
         </div>
       </div>
       <div style="display:flex;flex-direction:column;gap:0.6rem;">
-        <div class="c ca">
-          <h3>🔑 O que significa "Uso Permitido (B)"?</h3>
-          <p>Conforme o <strong>Decreto nº 9.847/2019</strong>, a espingarda cal.12 em configuração civil padrão (cano ≥ 24", capacidade original de fábrica) é de <strong>Uso Permitido</strong>. O cidadão pode adquirir e registrar cumprindo: capacitação técnica, registro no Exército, idoneidade comprovada e residência fixa.</p>
+        <div class="c cr" style="border-left:3px solid var(--red);">
+          <h3 style="color:var(--red);">🔴 O que torna uma espingarda Tipo A (Uso Restrito)?</h3>
+          <p><strong>Cano curto</strong> (menor que 24") · <strong>Capacidade aumentada</strong> além do padrão de fábrica · Acessórios militares como coronha rebatível tática. Somente para policiais e forças de segurança.</p>
         </div>
-        <div class="alerta">
-          <p>⚠️ <strong>Atenção:</strong> Cano muito curto ou acessórios militares podem alterar a classificação para <em>Uso Restrito (A)</em> — somente policiais. Sempre consulte a legislação antes de qualquer modificação.</p>
+        <div class="c cv" style="border-left:3px solid var(--grn);">
+          <h3 style="color:var(--grn);">🟢 O que torna uma espingarda Tipo B (Uso Permitido)?</h3>
+          <p><strong>Cano longo</strong> (≥ 24") · Capacidade <strong>original de fábrica</strong> · Configuração civil padrão, sem modificações restritas. O cidadão pode adquirir e registrar.</p>
         </div>
-        <div class="c cg">
-          <h3>🏛️ Base Legal</h3>
-          <p>Lei 10.826/2003 (Estatuto do Desarmamento) + Decreto 9.847/2019 + Decreto 3.665/2000 (R-105). Regulam compra, registro, porte, transporte e armazenamento.</p>
-        </div>
-        <div class="c cv">
-          <h3 style="color:var(--grn);">🔄 Espingarda Pump = Arma de Repetição</h3>
-          <p>A espingarda pump é uma <strong>arma de repetição de ação manual</strong> — o atirador movimenta a telha (pra trás e pra frente) para alimentar o próximo cartucho na câmara. Cada tiro exige esse movimento. Ex no Brasil: <strong>CBC 586, Remington 870</strong>.</p>
+        <div class="c" style="border-left:3px solid var(--goldb);">
+          <h3 style="color:var(--goldb);">🟡 Tipo C (Uso Exclusivo das Forças Armadas)</h3>
+          <p>Espingardas <strong>automáticas</strong> (disparo em rajada) ou com configurações exclusivamente militares. Somente Exército, Marinha e Aeronáutica.</p>
         </div>
       </div>
     </div>
@@ -856,13 +853,13 @@ img.clicavel:hover{filter:brightness(1.05);}
       <p class="figc">Imagem conforme Cartilha PF — alguns nomes podem diferir da nomenclatura técnica</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;">
-      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.06);">01</span><h3>Soleira (borracha de apoio)</h3><p>Borracha na ponta da coronha. <strong>Absorve o recuo</strong> e evita que a arma escorregue do ombro.</p></div>
-      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.06);">02</span><h3>Coronha (apoio do ombro)</h3><p>Parte de madeira ou polímero que encosta no ombro. <strong>Estabiliza a arma</strong> na hora do tiro. <em style="font-size:0.82rem;color:var(--muted);">Obs: na imagem da Cartilha PF o nome aparece diferente, mas o correto é <strong>coronha</strong>.</em></p></div>
-      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.06);">03</span><h3>Caixa de Culatra (receptáculo / carcaça)</h3><p>O "corpo" central da arma. <strong>Abriga todo o mecanismo interno</strong>: ferrolho, percussor, gatilho e sistema de alimentação.</p></div>
+      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.35);">01</span><h3>Soleira (borracha de apoio)</h3><p>Borracha na ponta da coronha. <strong>Absorve o recuo</strong> e evita que a arma escorregue do ombro.</p></div>
+      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.35);">02</span><h3>Coronha (apoio do ombro)</h3><p>Parte de madeira ou polímero que encosta no ombro. <strong>Estabiliza a arma</strong> na hora do tiro. <em style="font-size:0.82rem;color:var(--muted);">Obs: na imagem da Cartilha PF o nome aparece diferente, mas o correto é <strong>coronha</strong>.</em></p></div>
+      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.35);">03</span><h3>Caixa de Culatra (receptáculo / carcaça)</h3><p>O "corpo" central da arma. <strong>Abriga todo o mecanismo interno</strong>: ferrolho, percussor, gatilho e sistema de alimentação.</p></div>
     </div>
     <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.6rem;margin-top:0.6rem;">
-      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.06);">04</span><h3>Gatilho (onde aperta pra atirar)</h3><p><strong>Aciona o disparo.</strong> O dedo indicador só entra no guarda-mato quando estiver pronto pra atirar.</p></div>
-      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.06);">05</span><h3>Abertura de Ejeção (janela de ejeção)</h3><p>Abertura lateral por onde o <strong>cartucho usado é expulso</strong> após o tiro. Também permite inspeção visual da câmara.</p></div>
+      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.35);">04</span><h3>Gatilho (onde aperta pra atirar)</h3><p><strong>Aciona o disparo.</strong> O dedo indicador só entra no guarda-mato quando estiver pronto pra atirar.</p></div>
+      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.35);">05</span><h3>Abertura de Ejeção (janela de ejeção)</h3><p>Abertura lateral por onde o <strong>cartucho usado é expulso</strong> após o tiro. Também permite inspeção visual da câmara.</p></div>
     </div>
   </div>
 </div>
@@ -872,85 +869,21 @@ img.clicavel:hover{filter:brightness(1.05);}
 <section class="slide" id="s4" data-titulo="Peças II">
 <div class="inner">
   <div class="stag">03 — Anatomia · Parte II</div>
-  <h2 class="stit">NOMEN<span>CLATURA</span> — PEÇAS 06 A 10 + CICLO</h2>
+  <h2 class="stit">NOMEN<span>CLATURA</span> — PEÇAS 06 A 10</h2>
   <div class="sline"></div>
   <div class="content">
-    <div class="g2" style="flex:1;min-height:0;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;align-content:stretch;">
-        <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:1.82rem;color:rgba(107,30,0,.06);">06</span><h3>Abertura do Carregador (boca do tubo)</h3><p>Entrada por onde se <strong>insere os cartuchos</strong> no tubo de depósito. Fica na parte inferior da arma.</p></div>
-        <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:1.82rem;color:rgba(107,30,0,.06);">07</span><h3>Carregador de Munição (tubo de depósito)</h3><p>Tubo abaixo do cano. <strong>Armazena os cartuchos</strong> antes do disparo. Capacidade varia conforme o modelo.</p></div>
-        <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:1.82rem;color:rgba(107,30,0,.06);">08</span><h3>Cano (tubo por onde sai o tiro)</h3><p><strong>Alma lisa</strong> — interior liso, sem ranhuras. 14" a 28". Cano mais longo = maior velocidade e melhor controle da dispersão.</p></div>
-        <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:1.82rem;color:rgba(107,30,0,.06);">09</span><h3>Telha (guarda-mão / pump)</h3><p>A parte que o atirador <strong>desliza pra frente e pra trás</strong> para recarregar. É o "pump". Protege a mão do calor do cano.</p></div>
-        <div class="c ca" style="position:relative;overflow:hidden;grid-column:span 2;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:1.82rem;color:rgba(107,30,0,.06);">10</span><h3>Alça de Mira (mira de trás)</h3><p>Peça traseira de visada. Você alinha ela com a <strong>massa de mira</strong> (pino na frente do cano) e o alvo para fazer a pontaria.</p></div>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:0.6rem;min-height:0;">
-        <div class="svgb" style="flex:1;">
-          <svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-height:100%;">
-            <rect width="480" height="220" fill="#FEFCFA"/>
-            <text x="240" y="16" font-size="12" fill="#6B1E00" text-anchor="middle" font-family="Roboto Condensed" font-weight="700" letter-spacing="2">CICLO COMPLETO — DA ARMA FRIA AO DISPARO</text>
-            <!-- Passo 1: ARMA FRIA -->
-            <rect x="6" y="28" width="88" height="48" rx="6" fill="#888"/>
-            <text x="50" y="48" font-size="11" fill="#fff" text-anchor="middle" font-family="DM Sans" font-weight="700">① ARMA FRIA</text>
-            <text x="50" y="62" font-size="8" fill="rgba(255,255,255,.7)" text-anchor="middle" font-family="DM Sans">Descarregada</text>
-            <text x="50" y="70" font-size="8" fill="rgba(255,255,255,.7)" text-anchor="middle" font-family="DM Sans">Seguro ativado</text>
-            <!-- Seta 1→2 -->
-            <path d="M96 52 L108 52" stroke="#888" stroke-width="2" marker-end="url(#ar1)"/>
-            <!-- Passo 2: CARREGAR -->
-            <rect x="110" y="28" width="88" height="48" rx="6" fill="#8B5820"/>
-            <text x="154" y="48" font-size="11" fill="#fff" text-anchor="middle" font-family="DM Sans" font-weight="700">② CARREGAR</text>
-            <text x="154" y="62" font-size="8" fill="rgba(255,255,255,.7)" text-anchor="middle" font-family="DM Sans">Inserir cartuchos</text>
-            <text x="154" y="70" font-size="8" fill="rgba(255,255,255,.7)" text-anchor="middle" font-family="DM Sans">no tubo depósito</text>
-            <!-- Seta 2→3 -->
-            <path d="M200 52 L212 52" stroke="#8B5820" stroke-width="2" marker-end="url(#ar2)"/>
-            <!-- Passo 3: BOMBEAR -->
-            <rect x="214" y="28" width="88" height="48" rx="6" fill="#9B3A10"/>
-            <text x="258" y="48" font-size="11" fill="#fff" text-anchor="middle" font-family="DM Sans" font-weight="700">③ BOMBEAR</text>
-            <text x="258" y="62" font-size="8" fill="rgba(255,255,255,.7)" text-anchor="middle" font-family="DM Sans">Puxar telha p/ trás</text>
-            <text x="258" y="70" font-size="8" fill="rgba(255,255,255,.7)" text-anchor="middle" font-family="DM Sans">e empurrar p/ frente</text>
-            <!-- Seta 3→4 -->
-            <path d="M304 52 L316 52" stroke="#9B3A10" stroke-width="2" marker-end="url(#ar3)"/>
-            <!-- Passo 4: PRONTO EMPREGO -->
-            <rect x="318" y="24" width="92" height="56" rx="8" fill="#1A5520"/>
-            <text x="364" y="43" font-size="10" fill="#DDB040" text-anchor="middle" font-family="DM Sans" font-weight="700">★ PRONTO</text>
-            <text x="364" y="55" font-size="10" fill="#DDB040" text-anchor="middle" font-family="DM Sans" font-weight="700">EMPREGO</text>
-            <text x="364" y="70" font-size="8" fill="rgba(255,255,255,.7)" text-anchor="middle" font-family="DM Sans">Câmara carregada</text>
-            <!-- Seta 4→5 -->
-            <path d="M412 52 L424 52" stroke="#1A5520" stroke-width="2" marker-end="url(#ar4)"/>
-            <!-- Passo 5: ATIRAR -->
-            <rect x="426" y="28" width="48" height="48" rx="24" fill="#6B1E00"/>
-            <text x="450" y="49" font-size="11" fill="#fff" text-anchor="middle" font-family="DM Sans" font-weight="700">⑤</text>
-            <text x="450" y="62" font-size="10" fill="#DDB040" text-anchor="middle" font-family="DM Sans" font-weight="700">FOGO!</text>
-            <!-- Ciclo: volta do 5 ao 4 via bombear novamente -->
-            <path d="M450 78 L450 110 Q450 120 440 120 L180 120 Q170 120 170 110 L170 98" stroke="#6B1E00" stroke-width="2.5" fill="none" stroke-dasharray="8 4"/>
-            <!-- Caixa do ciclo (recarga) -->
-            <rect x="228" y="102" width="140" height="36" rx="6" fill="rgba(155,58,16,0.08)" stroke="#9B3A10" stroke-width="1.5"/>
-            <text x="298" y="118" font-size="10" fill="#9B3A10" text-anchor="middle" font-family="DM Sans" font-weight="700">⟳ BOMBEAR DE NOVO</text>
-            <text x="298" y="130" font-size="8" fill="#7A6050" text-anchor="middle" font-family="DM Sans">Ejeta gasto → carrega novo</text>
-            <!-- Seta subindo de volta ao Bombear -->
-            <path d="M170 98 L200 78" stroke="#9B3A10" stroke-width="2" fill="none" marker-end="url(#ar5)"/>
-            <!-- Label -->
-            <text x="134" y="108" font-size="9" fill="#6B1E00" text-anchor="middle" font-family="DM Sans" font-weight="600">Volta ao ③</text>
-            <!-- Nota de rodapé -->
-            <rect x="6" y="150" width="468" height="64" rx="6" fill="rgba(107,30,0,.04)" stroke="#e8e0d4" stroke-width="1"/>
-            <text x="16" y="166" font-size="10" fill="#6B1E00" font-family="DM Sans" font-weight="700">RESUMO:</text>
-            <text x="16" y="180" font-size="9" fill="#4A3020" font-family="DM Sans">• Primeira vez: ① Arma fria → ② Carregar tubo → ③ Bombear (telha) → ★ Pronto Emprego → ⑤ Atirar</text>
-            <text x="16" y="194" font-size="9" fill="#4A3020" font-family="DM Sans">• Após cada tiro: ③ Bombear (ejeta gasto + carrega novo) → ★ Pronto → ⑤ Atirar ⟳ repete</text>
-            <text x="16" y="208" font-size="9" fill="#7A6050" font-family="DM Sans" font-style="italic">O ciclo pump é 100% manual — o atirador controla cada recarga puxando e empurrando a telha</text>
-            <defs>
-              <marker id="ar1" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#888"/></marker>
-              <marker id="ar2" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#8B5820"/></marker>
-              <marker id="ar3" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#9B3A10"/></marker>
-              <marker id="ar4" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#1A5520"/></marker>
-              <marker id="ar5" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#9B3A10"/></marker>
-            </defs>
-          </svg>
-        </div>
-        <p class="figc">Ciclo Pump — 3 etapas por disparo · Controle manual total</p>
-        <div class="c ca">
-          <h3>⚡ Vantagem do Pump</h3>
-          <p>Funciona com <strong>qualquer tipo de cartucho</strong> — desde os mais fracos (borracha/gás) até os mais potentes (Magnum 76mm). Extremamente confiável em qualquer condição.</p>
-        </div>
-      </div>
+    <div class="svgb" style="margin-bottom:0.4rem;">
+      <img src="https://i.imgur.com/JgocZli.png" alt="Espingarda Pump Cal.12" style="width:100%;height:auto;object-fit:contain;border-radius:4px;max-height:28vh;">
+      <p class="figc">Imagem conforme Cartilha PF — alguns nomes podem diferir da nomenclatura técnica</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;">
+      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.35);">06</span><h3>Abertura do Carregador (boca do tubo)</h3><p>Entrada por onde se <strong>insere os cartuchos</strong> no tubo de depósito. Fica na parte inferior da arma.</p></div>
+      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.35);">07</span><h3>Carregador de Munição (tubo de depósito)</h3><p>Tubo abaixo do cano. <strong>Armazena os cartuchos</strong> antes do disparo. Capacidade varia conforme o modelo.</p></div>
+      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.35);">08</span><h3>Cano (tubo por onde sai o tiro)</h3><p><strong>Alma lisa</strong> — interior liso, sem ranhuras. 14" a 28". Cano mais longo = maior velocidade e melhor controle da dispersão.</p></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.6rem;margin-top:0.6rem;">
+      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.35);">09</span><h3>Telha (guarda-mão / pump)</h3><p>A parte que o atirador <strong>desliza pra frente e pra trás</strong> para recarregar. É o "pump". Protege a mão do calor do cano.</p></div>
+      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.35);">10</span><h3>Alça de Mira (mira de trás)</h3><p>Peça traseira de visada. Você alinha ela com a <strong>massa de mira</strong> (pino na frente do cano) e o alvo para fazer a pontaria.</p></div>
     </div>
   </div>
 </div>
@@ -1002,14 +935,14 @@ img.clicavel:hover{filter:brightness(1.05);}
       </div>
       <div style="display:flex;flex-direction:column;gap:0.6rem;">
         <div class="c ca"><h3>📦 Os 5 Componentes do Cartucho (munição)</h3></div>
-        <div class="comp"><div class="cdot"></div><div><h4>① Balins — Projéteis (bolinhas de chumbo)</h4><p><strong>Balins</strong> = múltiplas bolinhas de metal, para curta distância. <strong>Slug</strong> = projétil único pesado, maior alcance.</p></div></div>
+        <div class="comp"><div class="cdot"></div><div><h4>① Balins — Projéteis (bolinhas de chumbo)</h4><p><strong>Balins</strong> = múltiplas bolinhas de metal, para curta distância. <strong>Slug/Balote</strong> = projétil único pesado, maior alcance.</p></div></div>
         <div class="comp"><div class="cdot"></div><div><h4>② Estojo (invólucro externo)</h4><p>Tubo de plástico + base metálica. <strong>Une todos os componentes</strong> e veda a câmara.</p></div></div>
         <div class="comp"><div class="cdot"></div><div><h4>③ Propelente — Pólvora</h4><p>Combustão rápida gera <strong>enorme volume de gás</strong> que empurra os projéteis pelo cano.</p></div></div>
         <div class="comp"><div class="cdot"></div><div><h4>④ Bucha (separador plástico)</h4><p>Fica entre a pólvora e os balins (bolinhas de chumbo). <strong>Sela os gases</strong> e mantém os balins juntos dentro do cano até saírem.</p></div></div>
         <div class="comp"><div class="cdot"></div><div><h4>⑤ Espoleta (o "isqueiro")</h4><p>O percussor golpeia a espoleta → inicia a combustão da pólvora. <strong>Sem ela, nada acontece.</strong></p></div></div>
         <div class="c ca">
-          <h3>🤔 Por que "Calibre 12"? — Sistema Inglês</h3>
-          <p>Se você pegar <strong>12 esferas de chumbo</strong> com o diâmetro exato do cano e pesá-las, somam <strong>1 libra (453g)</strong>. Quanto menor o número → <strong>maior</strong> o diâmetro. Cal.12 é maior que Cal.20 e Cal.28. Diâmetro do cano: <strong>18,5mm</strong></p>
+          <h3>🤔 Por que se chama "Calibre 12"?</h3>
+          <p>O nome vem de uma medida antiga: imagine que você derreteu <strong>1 libra de chumbo</strong> (cerca de 453 gramas) e dividiu em bolinhas iguais que encaixam perfeitamente dentro do cano. Se deu pra fazer <strong>12 bolinhas</strong>, é calibre 12. Se desse pra fazer 20, seria calibre 20 — com bolinhas menores, porque o cano é mais fino. <strong>Então: número menor = cano mais grosso = mais potência.</strong> O calibre 12 tem cano de aproximadamente <strong>18,5mm</strong> de diâmetro.</p>
         </div>
       </div>
     </div>
@@ -1021,71 +954,55 @@ img.clicavel:hover{filter:brightness(1.05);}
 <section class="slide" id="s6" data-titulo="Munição II">
 <div class="inner">
   <div class="stag">04 — Cartuchos · Parte II</div>
-  <h2 class="stit">MUNI<span>ÇÃO</span> — TIPOS, NUMERAÇÃO E CHOKE</h2>
+  <h2 class="stit">MUNI<span>ÇÃO</span> — TIPOS E CHOKE</h2>
   <div class="sline"></div>
   <p class="sdesc">Cada tipo tem finalidade específica. A escolha errada compromete o resultado e pode ser perigosa.</p>
   <div class="content">
     <div class="g2" style="flex:1;min-height:0;">
       <div style="display:flex;flex-direction:column;gap:0.5rem;">
-        <div class="g2" style="gap:0.6rem;">
-          <div class="c cv"><h3 style="color:var(--grn);">12/70 — Padrão</h3><p>Câmara de <strong>70mm</strong> (2¾"). O mais comum no Brasil.</p></div>
-          <div class="c cr"><h3 style="color:var(--red);">12/76 — Magnum</h3><p>Câmara de <strong>76mm</strong> (3"). Mais potência. Só use se a arma aceitar.</p></div>
-        </div>
-        <div class="c ca">
-          <h3>🔢 Numeração dos Balins (bolinhas de chumbo)</h3>
-          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-top:5px;">
-            <div style="text-align:center;padding:5px;background:rgba(107,30,0,.06);border-radius:4px;"><div style="font-family:'Bebas Neue',sans-serif;font-size:1.35rem;color:var(--br);">00</div><div style="font-size:0.92rem;color:var(--muted);">8,4mm<br>Policial</div></div>
-            <div style="text-align:center;padding:5px;background:rgba(107,30,0,.06);border-radius:4px;"><div style="font-family:'Bebas Neue',sans-serif;font-size:1.35rem;color:var(--br);">0</div><div style="font-size:0.92rem;color:var(--muted);">8,1mm<br>Defesa</div></div>
-            <div style="text-align:center;padding:5px;background:rgba(107,30,0,.06);border-radius:4px;"><div style="font-family:'Bebas Neue',sans-serif;font-size:1.35rem;color:var(--br);">1</div><div style="font-size:0.92rem;color:var(--muted);">7,6mm<br>Caça</div></div>
-            <div style="text-align:center;padding:5px;background:rgba(107,30,0,.06);border-radius:4px;"><div style="font-family:'Bebas Neue',sans-serif;font-size:1.35rem;color:var(--br);">4</div><div style="font-size:0.92rem;color:var(--muted);">6,1mm<br>Caça</div></div>
-            <div style="text-align:center;padding:5px;background:rgba(107,30,0,.06);border-radius:4px;"><div style="font-family:'Bebas Neue',sans-serif;font-size:1.35rem;color:var(--br);">9</div><div style="font-size:0.92rem;color:var(--muted);">2mm<br>Esporte</div></div>
+        <div class="g3" style="gap:0.5rem;">
+          <div class="c ca" style="text-align:center;">
+            <div class="mod-img-wrap" style="height:90px;border-bottom:none;border-radius:6px;background:#f5f0e8;">
+              <img src="https://i.imgur.com/1miKrwk.png" alt="Balins — bolinhas de chumbo" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;">
+            </div>
+            <h3 style="margin-top:4px;">Balins (bolinhas de chumbo)</h3>
+            <p style="font-size:0.82rem;">Múltiplas esferas de chumbo. Quanto <strong>menor o número</strong> (ex: 00), maior a esfera e mais potência. Quanto <strong>maior o número</strong> (ex: 9), menor a esfera e mais bolinhas por cartucho.</p>
           </div>
-          <p style="font-size:0.88rem;margin-top:4px;color:var(--light);">⬇ menor nº = esfera maior = mais potência · ⬆ maior nº = esfera menor = mais esferas</p>
+          <div class="c ca" style="text-align:center;">
+            <div class="mod-img-wrap" style="height:90px;border-bottom:none;border-radius:6px;background:#f5f0e8;">
+              <img src="https://i.imgur.com/xuWJfxO.png" alt="Slug/Balote — projétil único" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;">
+            </div>
+            <h3 style="margin-top:4px;">Slug/Balote (projétil único)</h3>
+            <p style="font-size:0.82rem;">Um único projétil pesado e grande. Vai mais longe e penetra mais. Usado para caça grande e defesa.</p>
+          </div>
+          <div class="c ca" style="text-align:center;">
+            <div class="mod-img-wrap" style="height:90px;border-bottom:none;border-radius:6px;background:#f5f0e8;">
+              <img src="https://i.imgur.com/AG4X3rP.png" alt="Bean Bag — saquinho de areia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;">
+            </div>
+            <h3 style="margin-top:4px;">Bean Bag (saquinho de areia)</h3>
+            <p style="font-size:0.82rem;">Munição menos letal. Imobiliza sem perfurar. Usado por polícias em controle de distúrbios.</p>
+          </div>
         </div>
-        <div class="c cg">
-          <h3>🎯 Cartuchos Menos Letais</h3>
-          <p><strong>Borracha:</strong> projéteis de borracha para controle de distúrbios. <strong>Gás CS (gás lacrimogêneo):</strong> dispersão de multidões. <strong>Bean bag (saquinho de areia):</strong> imobilização sem perfurar.</p>
-        </div>
-        <div class="g2" style="gap:0.6rem;">
-          <div class="c cv" style="padding:0.4rem 0.6rem;"><h3 style="color:var(--grn);">✓ Use 12/70</h3><p>Para uso cotidiano, policial, esportivo e defesa no Brasil.</p></div>
-          <div class="c" style="border-top:3px solid var(--goldb);padding:0.4rem 0.6rem;"><h3 style="color:#8B6000;">⚠ 12/76 com cuidado</h3><p>Verifique o manual. Só use se especificado para Magnum 3".</p></div>
+        <div class="g2" style="gap:0.5rem;">
+          <div class="c cv"><h3 style="color:var(--grn);">✓ 12/70 — Padrão</h3><p>Câmara de <strong>70mm</strong> (2¾"). O mais comum no Brasil. Serve na maioria das espingardas cal.12. Use este para uso cotidiano, policial, esportivo e defesa.</p></div>
+          <div class="c" style="border-top:3px solid var(--goldb);"><h3 style="color:#8B6000;">⚠ 12/76 — Magnum</h3><p>Câmara de <strong>76mm</strong> (3"). Mais potência e mais recuo. <strong>Só use se o manual da arma especificar</strong> que aceita Magnum. Caso contrário, pode danificar a arma.</p></div>
         </div>
         <div class="alerta" style="padding:0.3rem 0.6rem;">
-          <p style="font-size:0.82rem;"><strong>Mito:</strong> "espingarda não precisa de pontaria". <strong>Errado.</strong> Em distâncias curtas o espalhamento é pequeno — visada correta é obrigatória.</p>
+          <p style="font-size:0.82rem;"><strong>Mito:</strong> "espingarda não precisa de pontaria". <strong>Errado.</strong> Em distâncias curtas o espalhamento dos balins é pequeno — visada correta é obrigatória.</p>
         </div>
       </div>
       <div style="display:flex;flex-direction:column;gap:0.5rem;">
-        <div class="svgb">
-          <svg viewBox="0 0 460 148" xmlns="http://www.w3.org/2000/svg">
-            <rect width="460" height="148" fill="#FEFCFA"/>
-            <text x="230" y="16" font-size="12" fill="#6B1E00" text-anchor="middle" font-family="Roboto Condensed" font-weight="700" letter-spacing="2">BALINS (chumbo) × SLUG (projétil único) × MENOS LETAL</text>
-            <g fill="#909294" stroke="#b0b2b4" stroke-width="1">
-              <circle cx="40" cy="74" r="12"/><circle cx="68" cy="64" r="12"/><circle cx="96" cy="74" r="12"/>
-              <circle cx="54" cy="50" r="11"/><circle cx="82" cy="50" r="11"/><circle cx="68" cy="95" r="10"/>
-            </g>
-            <text x="68" y="122" font-size="10" fill="#6B1E00" text-anchor="middle" font-family="DM Sans" font-weight="700">BALINS</text>
-            <text x="68" y="134" font-size="8" fill="#777" text-anchor="middle" font-family="DM Sans">(bolinhas de chumbo)</text>
-            <line x1="136" y1="8" x2="136" y2="142" stroke="#ddd" stroke-width="1.5" stroke-dasharray="5 5"/>
-            <ellipse cx="230" cy="74" rx="22" ry="38" fill="#909294" stroke="#b0b2b4" stroke-width="1.5"/>
-            <ellipse cx="230" cy="38" rx="22" ry="11" fill="#a8aaac"/>
-            <text x="230" y="122" font-size="10" fill="#6B1E00" text-anchor="middle" font-family="DM Sans" font-weight="700">SLUG</text>
-            <text x="230" y="134" font-size="8" fill="#777" text-anchor="middle" font-family="DM Sans">(projétil único pesado)</text>
-            <line x1="316" y1="8" x2="316" y2="142" stroke="#ddd" stroke-width="1.5" stroke-dasharray="5 5"/>
-            <rect x="360" y="50" width="64" height="44" rx="5" fill="#c8a860" stroke="#b09040" stroke-width="1.5"/>
-            <text x="392" y="76" font-size="9" fill="#5a4010" text-anchor="middle" font-family="DM Sans" font-weight="700">BEAN BAG</text>
-            <text x="392" y="86" font-size="7" fill="#5a4010" text-anchor="middle" font-family="DM Sans">(saco de areia)</text>
-            <text x="392" y="122" font-size="10" fill="#8B6000" text-anchor="middle" font-family="DM Sans" font-weight="700">MENOS LETAL</text>
-          </svg>
+        <div class="c cg">
+          <h3>📏 Distância Efetiva — Até onde cada munição funciona?</h3>
+          <p><strong>Birdshot (balins pequenos):</strong> eficaz até cerca de <strong>25 metros</strong>. Muito usado em caça de aves e tiro esportivo. Depois dessa distância os balins perdem energia e se espalham demais.</p>
+          <p style="margin-top:4px;"><strong>Buckshot (balins grandes):</strong> eficaz até <strong>35 a 40 metros</strong>. Usado em defesa e uso policial. Cada bolinha é bem maior que o birdshot — mais dano, menos esferas.</p>
+          <p style="margin-top:4px;"><strong>Slug/Balote (projétil único):</strong> eficaz até <strong>70 a 100 metros</strong>. Como é um projétil só, mantém energia por mais tempo. Usado em caça de animais grandes.</p>
+          <p style="font-size:0.82rem;color:var(--muted);margin-top:4px;font-style:italic;">Regra prática: o espalhamento dos balins aumenta cerca de 1 polegada para cada jarda de distância após sair do cano.</p>
         </div>
         <div class="c ca">
           <h3>🔩 Choke (Estrangulamento do Cano)</h3>
-          <p>Estreitamento na ponta do cano que controla a <strong>dispersão dos projéteis</strong>. Quanto maior o estrangulamento, menor o espalhamento.</p>
-          <p style="font-size:0.85rem;margin-top:3px;"><strong>Cylinder:</strong> sem estrangulamento · <strong>Improved Cylinder:</strong> leve · <strong>Modified:</strong> médio · <strong>Full:</strong> alta concentração</p>
-        </div>
-        <div class="c cg">
-          <h3>📏 Distância Efetiva</h3>
-          <p><strong>Birdshot (balins pequenos):</strong> ~25m · <strong>Buckshot (balins grandes):</strong> ~35–40m · <strong>Slug/Balote (projétil único):</strong> ~70–100m</p>
-          <p style="font-size:0.82rem;color:var(--muted);margin-top:3px;font-style:italic;">A dispersão aumenta ~1 polegada/jarda após o cano. Testes de <strong>"patterning"</strong> (disparos em alvo amplo) avaliam a distribuição real.</p>
+          <p>O choke é uma peça na ponta do cano que <strong>controla o quanto os balins se espalham</strong> após o disparo. Quanto mais apertado o choke, menos os balins se espalham — o tiro fica mais concentrado e alcança mais longe.</p>
+          <p style="font-size:0.85rem;margin-top:3px;"><strong>Cylinder:</strong> sem estrangulamento (maior espalhamento) · <strong>Improved Cylinder:</strong> leve · <strong>Modified:</strong> médio · <strong>Full:</strong> alta concentração (menor espalhamento)</p>
         </div>
       </div>
     </div>
@@ -1119,61 +1036,52 @@ img.clicavel:hover{filter:brightness(1.05);}
   <div class="stag">05 — Aplicações</div>
   <h2 class="stit">TIPOS DE <span>EMPREGO</span></h2>
   <div class="sline"></div>
-  <p class="sdesc"><strong>O que é "emprego"?</strong> É a <em>finalidade específica e autorizada</em> para a qual a arma é usada. Define o tipo de cartucho, a configuração da arma e a legislação que se aplica. Usar fora do emprego correto é ilegal.</p>
+  <p class="sdesc">"Emprego" é a finalidade específica para a qual a espingarda é usada. Define munição, configuração e legislação aplicável.</p>
   <div class="content">
-    <div class="g3" style="flex:1;min-height:0;">
+    <div class="g2" style="flex:1;min-height:0;">
       <div class="emp">
-        <div class="emp-icon" style="background:linear-gradient(135deg,#1e3050,#2a4070);">🚔</div>
+        <div class="emp-icon" style="background:linear-gradient(135deg,#282418,#3a3428);">🏠</div>
         <div class="empb">
-          <div class="badge">Policial / Tático</div>
-          <h3>Segurança Pública e CQB (combate aproximado)</h3>
-          <div class="empdef">Finalidade: contenção, controle e combate em espaço confinado</div>
-          <p>Cano curto 14"–18". Admite balins (bolinhas de chumbo), borracha, gás lacrimogêneo e slug (projétil único). Padrão em PMs e forças táticas de todo o Brasil.</p>
+          <div class="badge">Defesa Pessoal</div>
+          <h3>Defesa</h3>
+          <p>Utilizada para proteção pessoal e residencial, com alta eficiência em curtas distâncias.<br>
+          <strong>Cano:</strong> curto, geralmente entre 14" e 20"<br>
+          <strong>Munição:</strong> buckshot (balins maiores) e slug/balote (projétil único)<br>
+          <strong>Exemplo:</strong> CBC Military 3.0, CBC Pump Action 586</p>
         </div>
       </div>
       <div class="emp">
         <div class="emp-icon" style="background:linear-gradient(135deg,#1a3a12,#224818);">🌲</div>
         <div class="empb">
-          <div class="badge">Cinegético (caça)</div>
-          <h3>Caça (Uso Cinegético — para caçar)</h3>
-          <div class="empdef">Finalidade: abate de animais silvestres autorizados pelo IBAMA</div>
-          <p>Origem histórica da espingarda. Canos longos 24"–28" + choke ajustável (peça na ponta do cano que controla o espalhamento). Cartuchos específicos por espécie. Requer autorização do IBAMA.</p>
+          <div class="badge">Cinegético</div>
+          <h3>Caça</h3>
+          <p>Empregada na atividade cinegética para abate de animais autorizados, conforme legislação ambiental.<br>
+          <strong>Cano:</strong> médio a longo, entre 24" e 28"<br>
+          <strong>Munição:</strong> birdshot (balins pequenos), podendo variar conforme a caça<br>
+          <strong>Exemplo:</strong> CBC Pump Action 586, Boito Miura I<br>
+          <em style="font-size:0.82rem;color:var(--muted);">Obs: exige autorização dos órgãos ambientais (IBAMA) e cumprimento das normas para caça legal.</em></p>
         </div>
       </div>
       <div class="emp">
         <div class="emp-icon" style="background:linear-gradient(135deg,#302060,#4a3080);">🎯</div>
         <div class="empb">
           <div class="badge">Esportivo · CAC</div>
-          <h3>Tiro Desportivo</h3>
-          <div class="empdef">Finalidade: competição nas modalidades Skeet, Trap e Sporting Clays</div>
-          <p>Modelos semiautomáticos com recuo reduzido. Exige registro como Atirador (CAC) no Exército Brasileiro.</p>
+          <h3>Esportivo</h3>
+          <p>Utilizada em práticas de tiro esportivo, como trap (tiro ao prato), skeet (tiro ao prato lateral) e sporting (percurso de caça), com foco em precisão e repetição.<br>
+          <strong>Cano:</strong> longo, geralmente entre 26" e 30"<br>
+          <strong>Munição:</strong> birdshot (balins pequenos)<br>
+          <strong>Exemplo:</strong> Boito Miura II, CBC 7122</p>
         </div>
       </div>
       <div class="emp">
-        <div class="emp-icon" style="background:linear-gradient(135deg,#282418,#3a3428);">🏠</div>
+        <div class="emp-icon" style="background:linear-gradient(135deg,#1e3050,#2a4070);">🚔</div>
         <div class="empb">
-          <div class="badge">Defesa Pessoal</div>
-          <h3>Defesa Residencial</h3>
-          <div class="empdef">Finalidade: proteção da vida e da residência do proprietário</div>
-          <p>Alta capacidade de parada em curta distância. Cano 18"–20". Buckshot (balins grandes) nº 00 é o mais indicado. <strong>Atenção:</strong> mesmo com dispersão dos balins, é necessário apontar corretamente — a curta distância o espalhamento é pequeno.</p>
-        </div>
-      </div>
-      <div class="emp">
-        <div class="emp-icon" style="background:linear-gradient(135deg,#202e1a,#2a3e22);">🪖</div>
-        <div class="empb">
-          <div class="badge">Militar</div>
-          <h3>Aplicação Militar</h3>
-          <div class="empdef">Finalidade: arrombamento de portas (breaching), CQB (combate em espaço confinado) e missões especiais</div>
-          <p>Arrombar portas e fechaduras (breaching), combate urbano em espaço fechado e missões especiais. Benelli M4 e Mossberg 590A1 são referências mundiais.</p>
-        </div>
-      </div>
-      <div class="emp">
-        <div class="emp-icon" style="background:linear-gradient(135deg,#243010,#344820);">📋</div>
-        <div class="empb">
-          <div class="badge">Civil · CAC</div>
-          <h3>Registro Civil (CAC — Colecionador, Atirador, Caçador)</h3>
-          <div class="empdef">Finalidade: colecionismo, tiro esportivo ou caça registrada</div>
-          <p>Cidadãos podem registrar espingardas cal.12 como Colecionadores (C), Atiradores (A) ou Caçadores. Lei 10.826/2003 + Decreto 9.847/2019.</p>
+          <div class="badge">Institucional</div>
+          <h3>Uso Institucional</h3>
+          <p>Emprego por forças de segurança em operações táticas e controle de distúrbios.<br>
+          <strong>Cano:</strong> curto a médio, entre 14" e 18"<br>
+          <strong>Munição:</strong> letal (buckshot e slug/balote) e menos letal (borracha, bean bag (saquinho de areia), gás)<br>
+          <strong>Exemplo:</strong> CBC Military 3.0, CBC Pump Action 586</p>
         </div>
       </div>
     </div>
@@ -1201,12 +1109,12 @@ img.clicavel:hover{filter:brightness(1.05);}
         <div class="modb">
           <div class="badge">⭐ A mais usada no Brasil</div>
           <h3>Remington 870</h3>
-          <div class="modsub">Pump · Presente em PMs de todo o Brasil · Foto: variante Marine Magnum</div>
-          <p>A espingarda pump mais utilizada pela Polícia Militar brasileira. Muito usada por atiradores CAC. Extremamente confiável. O seguro (trava) fica <strong>atrás do guarda-mato</strong>.</p>
+          <div class="modsub">Pump · Presente em PMs de todo o Brasil · Foto: variante Marine Magnum (resistente à maresia)</div>
+          <p>A espingarda pump mais utilizada pela Polícia Militar brasileira. Muito usada por atiradores CAC. Extremamente confiável. A trava de segurança fica <strong>atrás do guarda-mato</strong>.</p>
           <div class="specs">
             <div class="spec"><span>Ação</span><span>Pump</span></div>
             <div class="spec"><span>Calibre</span><span>12 GA (70/76mm)</span></div>
-            <div class="spec"><span>Seguro</span><span>Atrás do guarda-mato (cruzeta)</span></div>
+            <div class="spec"><span>Trava de Segurança</span><span>Atrás do guarda-mato (cruzeta)</span></div>
           </div>
         </div>
       </div>
@@ -1222,11 +1130,11 @@ img.clicavel:hover{filter:brightness(1.05);}
           <div class="badge">🪖 Popular entre CAC no Brasil</div>
           <h3>Mossberg 590A1</h3>
           <div class="modsub">Pump · Seguro no topo (polegar) · MIL-SPEC (padrão militar)</div>
-          <p>O seguro (trava) fica <strong>no topo do receptáculo</strong>, acionado pelo polegar — diferente da Remington, onde o seguro fica atrás do gatilho. Isso facilita o manuseio para destros e canhotos. Construção robusta MIL-SPEC (aprovada em testes militares). Popular entre CAC no Brasil.</p>
+          <p>A trava de segurança fica <strong>no topo do receptáculo</strong>, acionado pelo polegar — diferente da Remington, onde a trava fica atrás do gatilho. Isso facilita o manuseio para destros e canhotos. Construção robusta MIL-SPEC (aprovada em testes militares). Popular entre CAC no Brasil.</p>
           <div class="specs">
             <div class="spec"><span>Ação</span><span>Pump</span></div>
             <div class="spec"><span>Calibre</span><span>12 GA</span></div>
-            <div class="spec"><span>Seguro</span><span>No topo (polegar) — ambidestro</span></div>
+            <div class="spec"><span>Trava de Segurança</span><span>No topo (polegar) — ambidestro</span></div>
           </div>
         </div>
       </div>
@@ -1246,7 +1154,7 @@ img.clicavel:hover{filter:brightness(1.05);}
           <div class="specs">
             <div class="spec"><span>Ação</span><span>Semiautomática (gás)</span></div>
             <div class="spec"><span>Calibre</span><span>12 GA</span></div>
-            <div class="spec"><span>Seguro</span><span>Atrás do guarda-mato (cruzeta)</span></div>
+            <div class="spec"><span>Trava de Segurança</span><span>Atrás do guarda-mato (cruzeta)</span></div>
           </div>
         </div>
       </div>
@@ -1266,7 +1174,7 @@ img.clicavel:hover{filter:brightness(1.05);}
           <div class="specs">
             <div class="spec"><span>Ação</span><span>Pump</span></div>
             <div class="spec"><span>Fabricante</span><span>CBC · Ribeirão Pires/SP</span></div>
-            <div class="spec"><span>Seguro</span><span>Atrás do guarda-mato (cruzeta)</span></div>
+            <div class="spec"><span>Trava de Segurança</span><span>Atrás do guarda-mato (cruzeta)</span></div>
           </div>
         </div>
       </div>
@@ -1324,45 +1232,69 @@ img.clicavel:hover{filter:brightness(1.05);}
 </div>
 </section>
 
-<!-- ══════ S10 — TRANSPORTE E ARMAZENAMENTO ══════ -->
+<!-- ══════ S10 — TRANSPORTE ══════ -->
 <section class="slide" id="s10" data-titulo="Transporte">
 <div class="inner">
-  <div class="stag">09 — Aspectos Legais</div>
-  <h2 class="stit">TRANS<span>PORTE</span> E ARMAZENAMENTO LEGAL</h2>
+  <div class="stag">09 — Aspectos Legais · Parte I</div>
+  <h2 class="stit">TRANS<span>PORTE</span> LEGAL</h2>
   <div class="sline"></div>
-  <p class="sdesc">O descumprimento das regras de transporte e armazenamento pode configurar crime — Lei 10.826/2003 (Estatuto do Desarmamento).</p>
+  <p class="sdesc">O descumprimento das regras de transporte pode configurar crime — Lei 10.826/2003 (Estatuto do Desarmamento).</p>
   <div class="content">
     <div class="g2" style="flex:1;min-height:0;">
-      <!-- COLUNA ESQUERDA: Transporte -->
       <div style="display:flex;flex-direction:column;gap:0.5rem;">
-        <div class="c cv" style="padding:0.4rem 0.6rem;">
-          <h3 style="color:var(--grn);">🚗 Transporte Legal da Espingarda</h3>
-          <p style="font-size:0.85rem;color:var(--muted);">Regras obrigatórias conforme Decreto 9.847/2019:</p>
+        <div class="c cv" style="padding:0.5rem 0.7rem;">
+          <h3 style="color:var(--grn);">🚗 Regras Obrigatórias para Transporte</h3>
+          <p style="font-size:0.85rem;color:var(--muted);">Conforme Decreto 9.847/2019 — o proprietário deve cumprir TODAS as regras abaixo:</p>
         </div>
         <div class="gen"><div class="gn" style="color:var(--grn);">✓</div><div><h4>Desmuniciada</h4><p>A arma deve estar <strong>completamente descarregada</strong> — câmara vazia, tubo de depósito vazio. Sem exceção.</p></div></div>
         <div class="gen"><div class="gn" style="color:var(--grn);">✓</div><div><h4>Em Estojo Apropriado</h4><p>Dentro de <strong>caixa, estojo ou bolsa fechada</strong>, própria para transporte de arma. Não pode estar visível ou acessível.</p></div></div>
         <div class="gen"><div class="gn" style="color:var(--grn);">✓</div><div><h4>Munição Separada</h4><p>Os cartuchos devem ser transportados <strong>em recipiente separado</strong> da arma. Não no mesmo estojo.</p></div></div>
-        <div class="gen"><div class="gn" style="color:var(--grn);">✓</div><div><h4>Documentação Obrigatória</h4><p>Levar: <strong>Certificado de Registro (CR)</strong> + documento de identidade com foto. O CR deve estar válido e atualizado.</p></div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0.5rem;">
+        <div class="gen"><div class="gn" style="color:var(--grn);">✓</div><div><h4>Documentação Obrigatória</h4><p>Levar: <strong>Certificado de Registro (CR) ou CRAF</strong> + documento de identidade com foto. Deve estar válido e atualizado.</p></div></div>
+        <div class="gen"><div class="gn" style="color:var(--grn);">✓</div><div><h4>Trajeto Direto</h4><p>O transporte deve ser <strong>da residência ao estande ou local autorizado</strong> e volta. Sem paradas desnecessárias ou desvios de rota.</p></div></div>
         <div class="gen"><div class="gn" style="color:var(--goldb);">GT</div><div><h4>Guia de Tráfego (GT)</h4><p>Obrigatória para <strong>transporte interestadual</strong> ou quando exigida pela PF/Exército. Emitida pelo SFPC/SisCont. Tem validade definida e trajeto específico. Sem ela, o transporte entre estados é <strong>ilegal</strong>.</p></div></div>
-        <div class="gen"><div class="gn" style="color:var(--grn);">✓</div><div><h4>Trajeto Direto</h4><p>O transporte deve ser <strong>da residência ao estande/local autorizado</strong> e volta. Sem paradas desnecessárias ou desvios.</p></div></div>
+        <div class="c cg">
+          <h3>💡 Dica Prática</h3>
+          <p>Antes de sair de casa: verifique se a arma está descarregada, coloque no estojo, munição em bolsa separada, confira CR/CRAF e identidade no bolso. Na dúvida, <strong>não transporte</strong>.</p>
+        </div>
         <div class="alerta">
           <p>⚠️ <strong>Atenção:</strong> Transporte irregular de arma = <strong>crime</strong> previsto no Art. 14 da Lei 10.826/2003. Pena: 2 a 4 anos de reclusão + multa.</p>
         </div>
       </div>
-      <!-- COLUNA DIREITA: Armazenamento -->
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ══════ S10B — ARMAZENAMENTO ══════ -->
+<section class="slide" id="s10b" data-titulo="Armazenamento">
+<div class="inner">
+  <div class="stag">09 — Aspectos Legais · Parte II</div>
+  <h2 class="stit">ARMAZE<span>NAMENTO</span> LEGAL</h2>
+  <div class="sline"></div>
+  <p class="sdesc">O proprietário é responsável pela guarda segura da arma. A omissão de cautela é crime previsto no Estatuto do Desarmamento.</p>
+  <div class="content">
+    <div class="g2" style="flex:1;min-height:0;">
       <div style="display:flex;flex-direction:column;gap:0.5rem;">
-        <div class="c ca" style="padding:0.4rem 0.6rem;">
-          <h3>🔒 Armazenamento Legal em Casa</h3>
+        <div class="c ca" style="padding:0.5rem 0.7rem;">
+          <h3>🔒 Regras de Armazenamento em Casa</h3>
           <p style="font-size:0.85rem;color:var(--muted);">Obrigações do proprietário para guarda residencial:</p>
         </div>
-        <div class="gen"><div class="gn">1</div><div><h4>Cofre ou Local com Chave</h4><p>A arma deve ficar em <strong>cofre, armário de aço ou local trancado</strong> com acesso restrito ao proprietário.</p></div></div>
-        <div class="gen"><div class="gn">2</div><div><h4>Arma Descarregada</h4><p>Guardar <strong>sempre desmuniciada</strong>. Câmara e tubo de depósito vazios. Seguro ativado.</p></div></div>
+        <div class="gen"><div class="gn">1</div><div><h4>Cofre ou Local com Chave</h4><p>A arma deve ficar em <strong>cofre, armário de aço ou local trancado</strong> com acesso restrito ao proprietário. O cofre deve ser fixado na parede ou piso quando possível.</p></div></div>
+        <div class="gen"><div class="gn">2</div><div><h4>Arma Descarregada</h4><p>Guardar <strong>sempre desmuniciada</strong>. Câmara e tubo de depósito vazios. Seguro (trava) ativado.</p></div></div>
         <div class="gen"><div class="gn">3</div><div><h4>Munição Separada</h4><p>Cartuchos em <strong>local diferente</strong> da arma. Idealmente em outro cofre ou compartimento trancado.</p></div></div>
-        <div class="gen"><div class="gn">4</div><div><h4>Fora do Alcance de Menores</h4><p>Crianças e adolescentes <strong>não podem ter acesso</strong> em nenhuma circunstância. Responsabilidade é do proprietário.</p></div></div>
-        <div class="gen"><div class="gn">5</div><div><h4>Ambiente Adequado</h4><p>Local <strong>seco e ventilado</strong>. Umidade causa oxidação (ferrugem). Evitar locais com variação de temperatura.</p></div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0.5rem;">
+        <div class="gen"><div class="gn">4</div><div><h4>Fora do Alcance de Menores</h4><p>Crianças e adolescentes <strong>não podem ter acesso</strong> em nenhuma circunstância. A responsabilidade é exclusiva do proprietário.</p></div></div>
+        <div class="gen"><div class="gn">5</div><div><h4>Ambiente Adequado</h4><p>Local <strong>seco e ventilado</strong>. Umidade causa oxidação (ferrugem) nas peças metálicas. Evitar locais com grande variação de temperatura.</p></div></div>
+        <div class="gen"><div class="gn">6</div><div><h4>Registro de Acesso</h4><p>Somente o proprietário registrado deve ter acesso à chave ou segredo do cofre. <strong>Nunca</strong> compartilhe a combinação com terceiros.</p></div></div>
+        <div class="alerta">
+          <p>⚠️ <strong>Art. 13 do Estatuto do Desarmamento:</strong> omissão de cautela na guarda = crime se outra pessoa (inclusive menor) acessar a arma. <strong>Pena: 1 a 3 anos de detenção + multa.</strong></p>
+        </div>
         <div class="c cg">
-          <h3>🏛️ Base Legal</h3>
-          <p><strong>Art. 13 do Estatuto do Desarmamento:</strong> omissão de cautela na guarda = crime se outra pessoa (inclusive menor) acessar a arma. <strong>Pena: 1 a 3 anos de detenção + multa.</strong></p>
+          <h3>💡 Resumo</h3>
+          <p>Cofre trancado + arma descarregada + munição separada + longe de crianças + ambiente seco = <strong>armazenamento correto</strong>.</p>
         </div>
       </div>
     </div>
@@ -1414,7 +1346,7 @@ img.clicavel:hover{filter:brightness(1.05);}
         <div class="gen"><div class="gn" style="color:var(--grn);">2</div><div><h4>Visada (pontaria)</h4><p>Alinhar <strong>massa de mira + alça de mira + alvo</strong>. Olho dominante aberto, foco na massa de mira.</p></div></div>
         <div class="gen"><div class="gn" style="color:var(--grn);">3</div><div><h4>Respiração</h4><p>Expirar parcialmente e <strong>pausar a respiração</strong> no momento do disparo. Evita tremor.</p></div></div>
         <div class="gen"><div class="gn" style="color:var(--grn);">4</div><div><h4>Acionamento do Gatilho</h4><p>Pressionar com a <strong>ponta do dedo indicador (falange distal)</strong>, de forma progressiva e suave. Nunca puxar de uma vez — apertar aos poucos até o disparo.</p></div></div>
-        <div class="gen"><div class="gn" style="color:var(--grn);">5</div><div><h4>Acompanhamento (follow-through — manter a posição)</h4><p>Manter posição e visada <strong>após o disparo</strong>. Não relaxar na hora do tiro. Avaliar onde acertou e corrigir se precisar.</p></div></div>
+        <div class="gen"><div class="gn" style="color:var(--grn);">5</div><div><h4>Acompanhamento — Follow-through (manter a posição)</h4><p>Manter posição e visada <strong>após o disparo</strong>. Não relaxar na hora do tiro. Avaliar onde acertou e corrigir se precisar.</p></div></div>
         <div class="gen"><div class="gn" style="color:var(--grn);">6</div><div><h4>Controle do Recuo</h4><p>Coronha bem encaixada no ombro + inclinação para frente = controle. Nunca coronha solta.</p></div></div>
       </div>
     </div>
@@ -1427,12 +1359,9 @@ img.clicavel:hover{filter:brightness(1.05);}
 <div class="inner" style="justify-content:center;align-items:center;text-align:center;">
   <div style="max-width:800px;width:100%;">
     <!-- Frase -->
-    <div style="margin-bottom:1.2rem;">
+    <div style="margin-bottom:1rem;">
       <p style="font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,4vw,3rem);letter-spacing:4px;color:var(--br);line-height:1.1;margin-bottom:0.4rem;">
         "ARMA SEGURA É ARMA NA MÃO<br>DE QUEM SABE USAR"
-      </p>
-      <p style="font-size:0.92rem;color:var(--muted);line-height:1.5;">
-        Conhecimento técnico, respeito à legislação e disciplina constante<br>são as bases do atirador responsável.
       </p>
     </div>
     <!-- Dados do autor -->
@@ -1446,21 +1375,16 @@ img.clicavel:hover{filter:brightness(1.05);}
       </div>
     </div>
     <!-- Escola -->
-    <div style="margin-bottom:1rem;">
+    <div style="margin-bottom:0.8rem;">
       <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--goldb);letter-spacing:4px;">COMBAT TÁTICO</div>
       <div style="font-size:0.85rem;color:var(--muted);letter-spacing:2px;">Escola de Formação em Armamento e Tiro</div>
     </div>
-    <!-- Fontes -->
-    <div style="background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:0.6rem 1rem;text-align:left;border-left:3px solid var(--goldb);">
-      <div style="font-family:'Roboto Condensed',sans-serif;font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--br);margin-bottom:4px;">📚 Fontes e Referências</div>
-      <div style="display:flex;flex-direction:column;gap:2px;">
-        <a href="https://www.gov.br/pf/pt-br/assuntos/armas/instrutores-de-armamento-e-tiro/orientacao-para-credenciamento/sintese-de-temas-para-avaliacao-de-capacidade-tecnica-30-12-2020.pdf" target="_blank" style="font-size:0.78rem;color:var(--muted);text-decoration:none;">→ Cartilha PF — CONAT/DIREX 2020</a>
-        <a href="https://www.planalto.gov.br/ccivil_03/decreto/D3665.htm" target="_blank" style="font-size:0.78rem;color:var(--muted);text-decoration:none;">→ Decreto nº 3.665/2000 (R-105)</a>
-        <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/decreto/D9847.htm" target="_blank" style="font-size:0.78rem;color:var(--muted);text-decoration:none;">→ Decreto nº 9.847/2019</a>
-        <a href="https://www.planalto.gov.br/ccivil_03/leis/2003/l10.826.htm" target="_blank" style="font-size:0.78rem;color:var(--muted);text-decoration:none;">→ Lei nº 10.826/2003 — Estatuto do Desarmamento</a>
-        <a href="https://bdex.eb.mil.br/jspui/bitstream/123456789/3795/1/TCC%20Cad%205430%20Augusto%20Marques.pdf" target="_blank" style="font-size:0.78rem;color:var(--muted);text-decoration:none;">→ TCC AMAN — Biblioteca Digital do Exército</a>
-        <a href="https://www.gov.br/pf/pt-br/assuntos/armas" target="_blank" style="font-size:0.78rem;color:var(--muted);text-decoration:none;">→ Portal Armas de Fogo — Polícia Federal</a>
-      </div>
+    <!-- QR Code Instagram -->
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <a href="https://www.instagram.com/ricardo_taira/" target="_blank">
+        <img src="https://i.imgur.com/EWPRLDm.png" alt="QR Code — Instagram @ricardo_taira" style="width:200px;height:200px;border-radius:10px;border:3px solid var(--goldb);">
+      </a>
+      <p style="font-size:0.85rem;color:var(--muted);letter-spacing:1px;">📱 Escaneie ou clique para acessar o Instagram</p>
     </div>
   </div>
 </div>
@@ -1486,7 +1410,7 @@ img.clicavel:hover{filter:brightness(1.05);}
   const c=document.getElementById('bg'),ctx=c.getContext('2d');
   let W,H,bs;
   function resize(){W=c.width=innerWidth;H=c.height=innerHeight;}
-  function mk(){return{x:Math.random()*W,y:Math.random()*H,rot:Math.random()*Math.PI*2,sp:.12+Math.random()*.18,rs:(Math.random()-.5)*.004,sc:.45+Math.random()*.55,al:.06+Math.random()*.06};}
+  function mk(){return{x:Math.random()*W,y:Math.random()*H,rot:Math.random()*Math.PI*2,sp:.12+Math.random()*.18,rs:(Math.random()-.5)*.004,sc:.45+Math.random()*.55,al:.10+Math.random()*.08};}
   function draw(b){
     ctx.save();ctx.globalAlpha=b.al;ctx.translate(b.x,b.y);ctx.rotate(b.rot);ctx.scale(b.sc,b.sc);
     ctx.beginPath();ctx.roundRect(-6,-18,12,32,[4]);ctx.fillStyle='#8B4513';ctx.fill();
