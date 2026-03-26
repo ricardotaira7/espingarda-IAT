@@ -459,6 +459,7 @@ nav{
   .nb a{font-size:0.72rem;padding:0 0.4rem;letter-spacing:1px;}
   .inner{padding:0 0.8rem;}
   .slide{padding:0.4rem 0 1.6rem;}
+  .content{flex:unset;min-height:unset;}
   .g2{grid-template-columns:1fr 1fr;gap:0.5rem;}
   .g3{grid-template-columns:repeat(2,1fr);gap:0.5rem;}
   .g4{grid-template-columns:repeat(2,1fr);gap:0.5rem;}
@@ -488,6 +489,7 @@ nav{
   .nb a{font-size:0.62rem;padding:0 0.3rem;letter-spacing:0.5px;}
   .inner{padding:0 0.5rem;}
   .slide{padding:0.3rem 0 1.4rem;}
+  .content{flex:unset;min-height:unset;}
   .g2,.g3{grid-template-columns:1fr;gap:0.4rem;}
   .g4{grid-template-columns:repeat(2,1fr);gap:0.4rem;}
   .stag{font-size:0.72rem;letter-spacing:2px;}
@@ -692,14 +694,13 @@ img.clicavel:hover{filter:brightness(1.05);}
 
 <!-- ASSINATURA -->
 <div class="sig">
-  <div class="sig-text">
-    Ricardo Taira
-    <span>Instrutor IAT · Combat Tático</span>
-  </div>
-  <a href="https://www.instagram.com/ricardo_taira/" target="_blank" class="sig-ig" title="@ricardo_taira">
+  <a href="https://www.instagram.com/ricardo_taira/" target="_blank" class="sig-ig" title="@ricardo_taira" style="text-decoration:none;">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-    @ricardo_taira
   </a>
+  <div class="sig-text">
+    @ricardo_taira
+    <span>IAT</span>
+  </div>
 </div>
 
 <nav>
@@ -718,26 +719,20 @@ img.clicavel:hover{filter:brightness(1.05);}
 <div class="inner" style="justify-content:center;">
   <div class="hero-flash"></div>
   <div class="hero-smoke" id="heroSmoke"></div>
-  <div class="haluno ha1" style="flex-direction:column;gap:0.15rem;margin-bottom:0.5rem;">
-    <span class="hanome" style="font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:5px;">RICARDO TAIRA</span>
-    <span class="harole" style="font-size:clamp(0.75rem,1.5vw,1rem);">Instrutor de Armamento e Tiro — IAT</span>
-    <span class="harole" style="font-size:clamp(0.6rem,1.2vw,0.82rem);opacity:0.6;">Formado pela Combat Tático · Escola de Formação em Armamento e Tiro</span>
+  <div class="haluno ha1" style="flex-direction:column;gap:0.15rem;margin-bottom:0.4rem;">
+    <span class="hanome" style="font-size:clamp(2rem,5vw,3.2rem);letter-spacing:6px;">RICARDO TAIRA</span>
+    <span class="harole" style="font-size:clamp(0.78rem,1.5vw,1.05rem);">IAT — Instrutor de Armamento e Tiro</span>
+    <span class="harole" style="font-size:clamp(0.6rem,1.2vw,0.82rem);opacity:0.6;">Formado pela Escola de Formação de Armamento e Tiro Combat Tático</span>
   </div>
-  <div class="htag ha2">Trabalho Técnico · IAT — Instrutor de Armamento e Tiro</div>
-  <h1 class="htitle ha3">ESPIN<span>GARDA</span><br>CAL. 12</h1>
-  <p class="hsubt ha4">Nomenclatura · Funcionamento · Tipos de Emprego · Segurança</p>
-  <div class="hbadge ha5">
-    <span class="hesc">COMBAT TÁTICO</span>
-    <span class="hsub">Escola de Formação em Armamento e Tiro</span>
-  </div>
-  <div class="hfontes ha6">
+  <h1 class="htitle ha2">ESPIN<span>GARDA</span><br>CAL. 12</h1>
+  <p class="hsubt ha3">Nomenclatura · Funcionamento · Tipos de Emprego</p>
+  <div class="hfontes ha4">
     <div class="hft">📚 Fontes e Referências</div>
     <a href="https://www.gov.br/pf/pt-br/assuntos/armas/instrutores-de-armamento-e-tiro/orientacao-para-credenciamento/sintese-de-temas-para-avaliacao-de-capacidade-tecnica-30-12-2020.pdf" target="_blank">Cartilha PF — CONAT/DIREX/PF · Síntese de Temas (2020)</a>
     <a href="https://www.planalto.gov.br/ccivil_03/decreto/D3665.htm" target="_blank">Decreto nº 3.665/2000 (R-105) · Regulamento de Fiscalização de Produtos Controlados</a>
     <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/decreto/D9847.htm" target="_blank">Decreto nº 9.847/2019 · Regulamento do Estatuto do Desarmamento</a>
     <a href="https://www.planalto.gov.br/ccivil_03/leis/2003/l10.826.htm" target="_blank">Lei nº 10.826/2003 · Estatuto do Desarmamento</a>
     <a href="https://www.gov.br/pf/pt-br/assuntos/armas" target="_blank">Portal Armas de Fogo · Polícia Federal · gov.br/pf/armas</a>
-    <a href="https://bdex.eb.mil.br/jspui/bitstream/123456789/3795/1/TCC%20Cad%205430%20Augusto%20Marques.pdf" target="_blank">TCC AMAN — Espingarda Cal.12 · Biblioteca Digital do Exército</a>
   </div>
 </div>
 </section>
@@ -892,11 +887,64 @@ img.clicavel:hover{filter:brightness(1.05);}
   </div>
 </div>
 </section>
+
+<!-- ══════ S4B — CALIBRE 12 ══════ -->
+<section class="slide" id="s4b" data-titulo="Calibre 12">
+<div class="inner">
+  <div class="stag">03 — Conceito Fundamental</div>
+  <h2 class="stit">POR QUE <span>"CALIBRE 12"?</span></h2>
+  <div class="sline"></div>
+  <p class="sdesc">O número do calibre indica o diâmetro interno do cano, seguindo o sistema de medição chamado <strong>gauge</strong> (bitola).</p>
+  <div class="content">
+    <div class="g2" style="flex:1;min-height:0;">
+      <div style="display:flex;flex-direction:column;gap:0.6rem;">
+        <div class="c ca">
+          <h3>🔢 Como funciona o sistema Gauge (bitola)?</h3>
+          <p>O número <strong>12</strong> no nome "calibre 12" não se refere diretamente ao tamanho do cano, mas sim ao seu <strong>diâmetro interno</strong>, seguindo o sistema chamado <em>gauge</em> (bitola).</p>
+          <p style="margin-top:6px;">Funciona da seguinte forma: a partir de <strong>1 libra de chumbo</strong> (aproximadamente 453g), são produzidas esferas com o mesmo diâmetro interno do cano da arma.</p>
+          <p style="margin-top:6px;">Se forem necessárias <strong>12 esferas</strong> para atingir esse peso → o calibre é <strong>12</strong>.<br>
+          Se forem necessárias <strong>20 esferas</strong> → o calibre é <strong>20</strong>.<br>
+          Se forem necessárias <strong>28 esferas</strong> → o calibre é <strong>28</strong>.</p>
+          <p style="margin-top:6px;">Como no calibre 12 são necessárias <strong>menos esferas</strong> para completar 1 libra, cada esfera possui <strong>maior diâmetro</strong>.</p>
+        </div>
+        <div class="c cg">
+          <h3>💡 Resumo</h3>
+          <p>Quanto <strong>menor o número</strong> do calibre no sistema gauge, <strong>maior será o diâmetro interno do cano</strong> — e consequentemente, maior o poder de fogo.</p>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0.6rem;">
+        <div style="display:grid;grid-template-columns:1fr;gap:0.5rem;">
+          <div class="c" style="border-left:4px solid var(--br);text-align:center;padding:0.7rem;">
+            <h3 style="font-size:1.3rem;color:var(--br);margin-bottom:2px;">CALIBRE 12</h3>
+            <p style="font-size:1.1rem;"><strong>18,5 mm</strong> de diâmetro interno</p>
+            <p style="font-size:0.85rem;color:var(--muted);">O mais usado no Brasil · Maior potência · 12 esferas = 1 libra</p>
+          </div>
+          <div class="c" style="border-left:4px solid var(--goldb);text-align:center;padding:0.7rem;">
+            <h3 style="font-size:1.1rem;color:var(--goldb);margin-bottom:2px;">CALIBRE 20</h3>
+            <p style="font-size:1rem;"><strong>15,6 mm</strong> de diâmetro interno</p>
+            <p style="font-size:0.85rem;color:var(--muted);">Menor recuo · Indicado para iniciantes · 20 esferas = 1 libra</p>
+          </div>
+          <div class="c" style="border-left:4px solid var(--light);text-align:center;padding:0.7rem;">
+            <h3 style="font-size:1rem;color:var(--light);margin-bottom:2px;">CALIBRE 28</h3>
+            <p style="font-size:0.95rem;"><strong>14,0 mm</strong> de diâmetro interno</p>
+            <p style="font-size:0.85rem;color:var(--muted);">Uso esportivo · Menor potência · 28 esferas = 1 libra</p>
+          </div>
+        </div>
+        <div class="c cv">
+          <h3 style="color:var(--grn);">📌 Por que o Calibre 12 é o mais utilizado?</h3>
+          <p>O calibre 12 oferece o melhor equilíbrio entre <strong>potência, versatilidade de munição e disponibilidade no mercado brasileiro</strong>. É o padrão das Polícias Militares, forças táticas e o mais acessível para civis registrados (CAC). Aceita desde cartuchos menos letais (borracha, gás) até munição de alto poder de parada (buckshot, slug/balote).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
 <!-- ══════ S5 — MUNIÇÃO I ══════ -->
 <section class="slide" id="s5" data-titulo="Munição I">
 <div class="inner">
   <div class="stag">04 — Cartuchos · Parte I</div>
-  <h2 class="stit">A MUNI<span>ÇÃO</span> — COMPONENTES E CALIBRE</h2>
+  <h2 class="stit">A MUNI<span>ÇÃO</span> — COMPONENTES DO CARTUCHO</h2>
   <div class="sline"></div>
   <div class="content">
     <div class="g2" style="flex:1;min-height:0;">
@@ -944,14 +992,6 @@ img.clicavel:hover{filter:brightness(1.05);}
         <div class="comp"><div class="cdot"></div><div><h4>③ Propelente — Pólvora</h4><p>Combustão rápida gera <strong>enorme volume de gás</strong> que empurra os projéteis pelo cano.</p></div></div>
         <div class="comp"><div class="cdot"></div><div><h4>④ Bucha (separador plástico)</h4><p>Fica entre a pólvora e os balins (bolinhas de chumbo). <strong>Sela os gases</strong> e mantém os balins juntos dentro do cano até saírem.</p></div></div>
         <div class="comp"><div class="cdot"></div><div><h4>⑤ Espoleta (o "isqueiro")</h4><p>O percussor golpeia a espoleta → inicia a combustão da pólvora. <strong>Sem ela, nada acontece.</strong></p></div></div>
-        <div class="c ca">
-          <h3>🤔 Por que se chama "Calibre 12"?</h3>
-          <p>O número <strong>12</strong> no nome "calibre 12" se refere ao <strong>tamanho do cano da espingarda</strong>, não à munição.</p>
-          <p style="margin-top:4px;">Funciona assim: pegue <strong>1 libra de chumbo</strong> (453g) e faça bolinhas do tamanho exato do cano. Se couberem <strong>12 bolinhas</strong>, o calibre é 12. Se couberem 20, o calibre é 20.</p>
-          <p style="margin-top:4px;">Como 1 libra dá pra fazer <strong>menos bolinhas</strong> no calibre 12, cada bolinha é <strong>maior</strong>. Por isso:</p>
-          <p style="margin-top:4px;background:rgba(107,30,0,.06);padding:4px 8px;border-radius:4px;"><strong>Calibre 12</strong> = cano mais grosso (18,5mm) = mais potente<br><strong>Calibre 20</strong> = cano mais fino = menos potente<br><strong>Calibre 28</strong> = cano ainda mais fino = menos potente ainda</p>
-          <p style="margin-top:4px;font-size:0.85rem;color:var(--muted);">Resumindo: <strong>quanto menor o número do calibre, maior o cano e maior a potência</strong>. O calibre 12 é o mais usado no Brasil.</p>
-        </div>
       </div>
     </div>
   </div>
@@ -1426,7 +1466,7 @@ img.clicavel:hover{filter:brightness(1.05);}
   const c=document.getElementById('bg'),ctx=c.getContext('2d');
   let W,H,bs;
   function resize(){W=c.width=innerWidth;H=c.height=innerHeight;}
-  function mk(){return{x:Math.random()*W,y:Math.random()*H,rot:Math.random()*Math.PI*2,sp:.12+Math.random()*.18,rs:(Math.random()-.5)*.004,sc:.45+Math.random()*.55,al:.10+Math.random()*.08};}
+  function mk(){return{x:Math.random()*W,y:Math.random()*H,rot:Math.random()*Math.PI*2,sp:.12+Math.random()*.18,rs:(Math.random()-.5)*.004,sc:.45+Math.random()*.55,al:.14+Math.random()*.10};}
   function draw(b){
     ctx.save();ctx.globalAlpha=b.al;ctx.translate(b.x,b.y);ctx.rotate(b.rot);ctx.scale(b.sc,b.sc);
     ctx.beginPath();ctx.roundRect(-6,-18,12,32,[4]);ctx.fillStyle='#8B4513';ctx.fill();
