@@ -12,10 +12,10 @@
 /* ══════════════ BASE DE ESCALA ══════════════
    16px fixo + clamp.
    Todos os tamanhos em rem escalam juntos.
-   Com F11 a viewport cresce → mais espaço → layout respira.
+   Com F11 a viewport cresce — mais espaço — layout respira.
    Sem F11 o conteúdo ainda cabe, ajustado via flex.
 */
-html{ font-size:clamp(14px, 1.95vh, 20px); } /* 1080p→~19px, legível mas cabe melhor */
+html{ font-size:clamp(14px, 1.95vh, 20px); } /* 1080p — ~19px, legível mas cabe melhor */
 body{
   width:100%;height:100%;
   font-family:'DM Sans',sans-serif;
@@ -36,31 +36,47 @@ body{
 
 /* ══════════════ ASSINATURA ══════════════ */
 .sig{
-  position:fixed;bottom:28px;right:16px;z-index:997;
-  display:flex;align-items:center;gap:6px;
-  opacity:0.45;transition:opacity 0.3s;
-  pointer-events:auto;
+  position:fixed;bottom:18px;right:16px;z-index:997;
+  pointer-events:none;
 }
-.sig:hover{opacity:0.85;}
-.sig-text{
-  font-family:'Roboto Condensed',sans-serif;
-  font-size:0.62rem;letter-spacing:1.5px;text-transform:uppercase;
-  color:var(--br);line-height:1.2;text-align:right;
+.sig a{
+  display:inline-flex;align-items:center;gap:6px;
+  opacity:0.55;transition:opacity 0.3s;
+  pointer-events:auto;text-decoration:none;
 }
-.sig-text span{display:block;font-size:0.52rem;color:var(--muted);letter-spacing:1px;}
-.sig-ig{
-  display:flex;align-items:center;gap:3px;
-  text-decoration:none;color:var(--br);
-  font-size:0.52rem;letter-spacing:1px;
-  font-family:'Roboto Condensed',sans-serif;
-  opacity:0.7;transition:opacity 0.3s;
+.sig a:hover{opacity:0.92;}
+.sig svg{width:15px;height:15px;fill:var(--br);flex-shrink:0;transition:fill 0.3s;}
+.sig a:hover svg{fill:var(--goldb);}
+.sig-label{
+  font-family:'Roboto Condensed',sans-serif;font-size:0.7rem;
+  letter-spacing:1.5px;color:var(--br);transition:color 0.3s;
 }
-.sig-ig:hover{opacity:1;color:var(--goldb);}
-.sig-ig svg{width:12px;height:12px;fill:currentColor;flex-shrink:0;}
-/* Light sig on dark slides */
-.sig.sig-light .sig-text{color:rgba(255,255,255,0.5);}
-.sig.sig-light .sig-text span{color:rgba(255,255,255,0.3);}
-.sig.sig-light .sig-ig{color:rgba(221,176,64,0.5);}
+.sig a:hover .sig-label{color:var(--goldb);}
+.sig.sig-light svg{fill:rgba(221,176,64,0.5);}
+.sig.sig-light .sig-label{color:rgba(221,176,64,0.5);}
+
+/* ══════════════ PERGUNTA DE PROVA ══════════════ */
+.prova{
+  margin-top:auto;padding:0.25rem 0.5rem;
+  background:rgba(107,30,0,0.02);border:1px solid rgba(107,30,0,0.06);
+  border-left:3px solid var(--goldb);border-radius:0 4px 4px 0;
+  max-width:100%;font-size:0.72rem;
+}
+.prova-t{font-family:'Bebas Neue',sans-serif;font-size:0.62rem;letter-spacing:2px;color:var(--goldb);margin-bottom:1px;}
+.prova-q{font-size:0.72rem;color:var(--text);line-height:1.3;margin-bottom:2px;font-weight:600;}
+.prova-o{font-size:0.68rem;color:var(--muted);line-height:1.2;padding:0;}
+.prova-o.correta{color:var(--grn);font-weight:600;}
+.prova-r{font-size:0.6rem;color:var(--grn);font-weight:600;margin-top:1px;}
+
+/* ══════════════ INSTRUCTOR CALLOUTS ══════════════ */
+.callout{
+  padding:0.25rem 0.5rem;border-radius:4px;font-size:0.78rem;line-height:1.35;
+  margin-top:0.3rem;
+}
+.callout-erro{background:rgba(139,16,16,0.05);border-left:3px solid var(--red);color:var(--red);}
+.callout-prova{background:rgba(191,144,32,0.06);border-left:3px solid var(--goldb);color:#8B6000;}
+.callout-pratica{background:rgba(26,85,32,0.05);border-left:3px solid var(--grn);color:var(--grn);}
+.callout strong{font-size:0.72rem;}
 #bg{position:fixed;inset:0;z-index:0;pointer-events:none;}
 
 /* ══════════════ NAV ══════════════ */
@@ -385,7 +401,7 @@ nav{
   white-space:normal;overflow:hidden;text-overflow:ellipsis;
   line-height:1.3;
 }
-.hfontes a:before{content:'→';color:#DDB040;flex-shrink:0;}
+.hfontes a:before{content:' — ';color:#DDB040;flex-shrink:0;}
 .hfontes a:hover{color:#DDB040;}
 
 /* Footer do slide Segurança */
@@ -686,6 +702,18 @@ img.clicavel:hover{filter:brightness(1.05);}
 @media(max-width:768px) and (orientation:portrait){
   .rotate-hint{display:block;}
 }
+
+/* ══════════════ 16:9 FIT & OVERFLOW FIX ══════════════ */
+.slide{overflow-y:auto !important;}
+.content{min-height:0 !important;flex-shrink:1;}
+.inner{overflow:visible;}
+.g2,.g3,.g4{min-height:0;}
+
+/* QR Code — prevent lightbox */
+.qr-nolight{pointer-events:none;}
+.qr-nolight+*{pointer-events:auto;}
+a:has(.qr-nolight){pointer-events:auto !important;}
+.qr-nolight{pointer-events:auto !important;}
 </style>
 </head>
 <body>
@@ -694,13 +722,10 @@ img.clicavel:hover{filter:brightness(1.05);}
 
 <!-- ASSINATURA -->
 <div class="sig">
-  <a href="https://www.instagram.com/ricardo_taira/" target="_blank" class="sig-ig" title="@ricardo_taira" style="text-decoration:none;">
+  <a href="https://www.instagram.com/ricardo_taira/" target="_blank" title="@ricardo_taira" style="display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:inherit;">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    <span class="sig-label">@ricardo_taira</span>
   </a>
-  <div class="sig-text">
-    @ricardo_taira
-    <span>IAT</span>
-  </div>
 </div>
 
 <nav>
@@ -779,10 +804,17 @@ img.clicavel:hover{filter:brightness(1.05);}
           <strong>Uso:</strong> caça de animais maiores · tiros mais precisos com espingarda.<br>
           <strong>Exemplos:</strong> Remington 870 SPS (versão slug/balote com cano raiado) · Mossberg 500 Slugster.</p>
         </div>
-        <div class="qt" style="padding:0.4rem 0.7rem;">
-          <p style="font-size:0.85rem;">"A espingarda cal.12 é amplamente utilizada por forças policiais em todo o Brasil por sua eficácia em curta distância e pela variedade de munições." — <strong>Cartilha PF / CONAT 2020</strong></p>
-        </div>
       </div>
+    </div>
+  
+    <div class="prova">
+      <div class="prova-t">📝 Pergunta de Prova (PF / IAT)</div>
+      <div class="prova-q">Qual a principal diferença funcional entre uma espingarda de alma lisa e uma de alma raiada?</div>
+      <div class="prova-o"><strong>A)</strong> A alma lisa possui ranhuras helicoidais para estabilizar o projétil único.</div>
+      <div class="prova-o"><strong>B)</strong> A alma raiada é projetada para disparar múltiplos projéteis simultaneamente.</div>
+      <div class="prova-o correta"><strong>C)</strong> A alma lisa possui interior sem raiamento, projetada para disparar cartuchos com múltiplos projéteis (balins) ou projétil único (slug/balote).</div>
+      <div class="prova-o"><strong>D)</strong> Não há diferença funcional — ambas disparam os mesmos tipos de munição.</div>
+      <div class="prova-r">✓ Resposta correta: Alternativa C</div>
     </div>
   </div>
 </div>
@@ -828,12 +860,23 @@ img.clicavel:hover{filter:brightness(1.05);}
           ● Instalar <strong>coronha rebatível</strong> ou dobrável de uso tático<br>
           ● Adicionar <strong>acessórios exclusivos de forças de segurança</strong></p>
           <p style="margin-top:5px;font-size:0.85rem;color:var(--red);"><strong>Sempre consulte a legislação vigente antes de qualquer modificação.</strong></p>
+          <div class="callout callout-prova" style="margin-top:4px;"><strong>🎯 ATENÇÃO EM PROVA:</strong> A classificação A, B e C é didática. A legislação oficial utiliza "uso permitido" e "uso restrito" conforme o Decreto 3.665/2000 (R-105).</div>
         </div>
         <div class="c cg">
           <h3>🏛️ Base Legal</h3>
           <p>Lei 10.826/2003 (Estatuto do Desarmamento) + Decreto 9.847/2019 + Decreto 3.665/2000 (R-105).</p>
         </div>
       </div>
+    </div>
+  
+    <div class="prova">
+      <div class="prova-t">📝 Pergunta de Prova (PF / IAT)</div>
+      <div class="prova-q">Qual modificação pode reclassificar uma espingarda de Uso Permitido (Tipo B) para Uso Restrito (Tipo A)?</div>
+      <div class="prova-o"><strong>A)</strong> Substituição da coronha de madeira por polímero.</div>
+      <div class="prova-o correta"><strong>B)</strong> Redução do comprimento do cano para menos de 24 polegadas.</div>
+      <div class="prova-o"><strong>C)</strong> Instalação de bandoleira (porta-fuzil).</div>
+      <div class="prova-o"><strong>D)</strong> Aplicação de acabamento superficial (pintura, oxidação).</div>
+      <div class="prova-r">✓ Resposta correta: Alternativa B</div>
     </div>
   </div>
 </div>
@@ -852,13 +895,23 @@ img.clicavel:hover{filter:brightness(1.05);}
       <p class="figc">Imagem conforme Cartilha PF — alguns nomes podem diferir da nomenclatura técnica</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;">
-      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.35);">01</span><h3>Soleira (borracha de apoio)</h3><p>Borracha na ponta da coronha. <strong>Absorve o recuo</strong> e evita que a arma escorregue do ombro.</p></div>
+      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.35);">01</span><h3>Soleira (amortecedor de recuo)</h3><p>Borracha na ponta da coronha. <strong>Absorve o recuo</strong> e evita que a arma escorregue do ombro.</p></div>
       <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.35);">02</span><h3>Coronha (apoio do ombro)</h3><p>Parte de madeira ou polímero que encosta no ombro. <strong>Estabiliza a arma</strong> na hora do tiro. <em style="font-size:0.82rem;color:var(--muted);">Obs: na imagem da Cartilha PF o nome aparece diferente, mas o correto é <strong>coronha</strong>.</em></p></div>
-      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.35);">03</span><h3>Caixa de Culatra (receptáculo / carcaça)</h3><p>O "corpo" central da arma. <strong>Abriga todo o mecanismo interno</strong>: ferrolho, percussor, gatilho e sistema de alimentação.</p></div>
+      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.35);">03</span><h3>Caixa de Culatra (receptáculo / carcaça)</h3><p>O "corpo" central da arma — também chamado de <strong>receiver</strong> (receptor). <strong>Abriga todo o mecanismo interno</strong>: ferrolho, percussor, gatilho e sistema de alimentação.</p></div>
     </div>
     <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.6rem;margin-top:0.6rem;">
-      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.35);">04</span><h3>Gatilho (onde aperta pra atirar)</h3><p><strong>Aciona o disparo.</strong> O dedo indicador só entra no guarda-mato quando estiver pronto pra atirar.</p></div>
+      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.35);">04</span><h3>Gatilho (peça de acionamento do disparo)</h3><p><strong>Aciona o disparo.</strong> O dedo indicador só entra no guarda-mato quando estiver pronto para atirar.</p></div>
       <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.35);">05</span><h3>Abertura de Ejeção (janela de ejeção)</h3><p>Abertura lateral por onde o <strong>cartucho usado é expulso</strong> após o tiro. Também permite inspeção visual da câmara.</p></div>
+    </div>
+  
+    <div class="prova">
+      <div class="prova-t">📝 Pergunta de Prova (PF / IAT)</div>
+      <div class="prova-q">Qual é a função da soleira (amortecedor de recuo) na espingarda?</div>
+      <div class="prova-o"><strong>A)</strong> Proteger a mão do atirador contra o aquecimento do cano.</div>
+      <div class="prova-o correta"><strong>B)</strong> Absorver parte da energia de recuo e estabilizar o encaixe no ombro do atirador.</div>
+      <div class="prova-o"><strong>C)</strong> Facilitar o acionamento da trava de segurança durante o manuseio.</div>
+      <div class="prova-o"><strong>D)</strong> Direcionar os gases propelentes para fora do receptáculo.</div>
+      <div class="prova-r">✓ Resposta correta: Alternativa B</div>
     </div>
   </div>
 </div>
@@ -876,13 +929,23 @@ img.clicavel:hover{filter:brightness(1.05);}
       <p class="figc">Imagem conforme Cartilha PF — alguns nomes podem diferir da nomenclatura técnica</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;">
-      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.35);">06</span><h3>Abertura do Carregador (boca do tubo)</h3><p>Entrada por onde se <strong>insere os cartuchos</strong> no tubo de depósito. Fica na parte inferior da arma.</p></div>
+      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.35);">06</span><h3>Abertura do Carregador (abertura de alimentação)</h3><p>Entrada por onde se <strong>insere os cartuchos</strong> no tubo de depósito. Fica na parte inferior da arma.</p></div>
       <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.35);">07</span><h3>Carregador de Munição (tubo de depósito)</h3><p>Tubo abaixo do cano. <strong>Armazena os cartuchos</strong> antes do disparo. Capacidade varia conforme o modelo.</p></div>
-      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.35);">08</span><h3>Cano (tubo por onde sai o tiro)</h3><p><strong>Alma lisa</strong> — interior liso, sem ranhuras. 14" a 28". Cano mais longo = maior velocidade e melhor controle da dispersão.</p></div>
+      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.35);">08</span><h3>Cano (condutor do projétil)</h3><p><strong>Alma lisa (sem raiamento)</strong> — interior completamente liso. Comprimento varia de 14" a 28". Canos mais longos proporcionam maior velocidade ao projétil e melhor controle do padrão de dispersão.</p></div>
     </div>
     <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.6rem;margin-top:0.6rem;">
-      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.35);">09</span><h3>Telha (guarda-mão / pump)</h3><p>A parte que o atirador <strong>desliza pra frente e pra trás</strong> para recarregar. É o "pump". Protege a mão do calor do cano.</p></div>
-      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.35);">10</span><h3>Alça de Mira (mira de trás)</h3><p>Peça traseira de visada. Você alinha ela com a <strong>massa de mira</strong> (pino na frente do cano) e o alvo para fazer a pontaria.</p></div>
+      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.35);">09</span><h3>Telha (guarda-mão / pump)</h3><p>A parte que o atirador <strong>desliza pra frente e pra trás</strong> para recarregar. É o componente que caracteriza o sistema pump (ação de repetição manual). Protege a mão do calor do cano.</p></div>
+      <div class="c ca" style="position:relative;overflow:hidden;"><span style="position:absolute;top:1px;right:5px;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(107,30,0,.35);">10</span><h3>Alça de Mira (dispositivo de visada posterior)</h3><p>Peça traseira de visada. Você alinha ela com a <strong>massa de mira</strong> (pino na frente do cano) e o alvo para fazer a pontaria.</p></div>
+    </div>
+  
+    <div class="prova">
+      <div class="prova-t">📝 Pergunta de Prova (PF / IAT)</div>
+      <div class="prova-q">A telha (guarda-mão) da espingarda pump possui dupla função operacional. Quais são elas?</div>
+      <div class="prova-o correta"><strong>A)</strong> Proteger a mão do calor do cano e acionar o mecanismo de repetição manual (ciclo pump).</div>
+      <div class="prova-o"><strong>B)</strong> Servir como mira auxiliar e travar o ferrolho na posição fechada.</div>
+      <div class="prova-o"><strong>C)</strong> Proteger o cano de impactos externos e armazenar cartuchos reserva.</div>
+      <div class="prova-o"><strong>D)</strong> Regular a pressão dos gases e direcionar a ejeção do estojo.</div>
+      <div class="prova-r">✓ Resposta correta: Alternativa A</div>
     </div>
   </div>
 </div>
@@ -894,17 +957,17 @@ img.clicavel:hover{filter:brightness(1.05);}
   <div class="stag">03 — Conceito Fundamental</div>
   <h2 class="stit">POR QUE <span>"CALIBRE 12"?</span></h2>
   <div class="sline"></div>
-  <p class="sdesc">O número do calibre indica o diâmetro interno do cano, seguindo o sistema de medição chamado <strong>gauge</strong> (bitola).</p>
+  <p class="sdesc">O número do calibre indica o diâmetro interno do cano, seguindo o sistema de medição chamado <strong>gauge</strong>, popularmente referido como calibre.</p>
   <div class="content">
     <div class="g2" style="flex:1;min-height:0;">
       <div style="display:flex;flex-direction:column;gap:0.6rem;">
         <div class="c ca">
-          <h3>🔢 Como funciona o sistema Gauge (bitola)?</h3>
-          <p>O número <strong>12</strong> no nome "calibre 12" não se refere diretamente ao tamanho do cano, mas sim ao seu <strong>diâmetro interno</strong>, seguindo o sistema chamado <em>gauge</em> (bitola).</p>
+          <h3>🔢 Como funciona o sistema Gauge?</h3>
+          <p>O número <strong>12</strong> no nome "calibre 12" não se refere diretamente ao tamanho do cano, mas sim ao seu <strong>diâmetro interno</strong>, seguindo o sistema de medição chamado <em>gauge</em>, popularmente referido como calibre.</p>
           <p style="margin-top:6px;">Funciona da seguinte forma: a partir de <strong>1 libra de chumbo</strong> (aproximadamente 453g), são produzidas esferas com o mesmo diâmetro interno do cano da arma.</p>
-          <p style="margin-top:6px;">Se forem necessárias <strong>12 esferas</strong> para atingir esse peso → o calibre é <strong>12</strong>.<br>
-          Se forem necessárias <strong>20 esferas</strong> → o calibre é <strong>20</strong>.<br>
-          Se forem necessárias <strong>28 esferas</strong> → o calibre é <strong>28</strong>.</p>
+          <p style="margin-top:6px;">Se forem necessárias <strong>12 esferas</strong> para atingir esse peso — o calibre é <strong>12</strong>.<br>
+          Se forem necessárias <strong>20 esferas</strong> — o calibre é <strong>20</strong>.<br>
+          Se forem necessárias <strong>28 esferas</strong> — o calibre é <strong>28</strong>.</p>
           <p style="margin-top:6px;">Como no calibre 12 são necessárias <strong>menos esferas</strong> para completar 1 libra, cada esfera possui <strong>maior diâmetro</strong>.</p>
         </div>
         <div class="c cg">
@@ -912,29 +975,45 @@ img.clicavel:hover{filter:brightness(1.05);}
           <p>Quanto <strong>menor o número</strong> do calibre no sistema gauge, <strong>maior será o diâmetro interno do cano</strong> — e consequentemente, maior o poder de fogo.</p>
         </div>
       </div>
-      <div style="display:flex;flex-direction:column;gap:0.6rem;">
-        <div style="display:grid;grid-template-columns:1fr;gap:0.5rem;">
-          <div class="c" style="border-left:4px solid var(--br);text-align:center;padding:0.7rem;">
-            <h3 style="font-size:1.3rem;color:var(--br);margin-bottom:2px;">CALIBRE 12</h3>
-            <p style="font-size:1.1rem;"><strong>18,5 mm</strong> de diâmetro interno</p>
-            <p style="font-size:0.85rem;color:var(--muted);">O mais usado no Brasil · Maior potência · 12 esferas = 1 libra</p>
+      <div style="display:flex;flex-direction:column;gap:0.5rem;">
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.4rem;">
+          <div class="c" style="border-left:4px solid var(--br);text-align:center;padding:0.4rem;">
+            <h3 style="font-size:1rem;color:var(--br);margin-bottom:1px;">CAL. 12</h3>
+            <p style="font-size:0.92rem;"><strong>18,5 mm</strong></p>
+            <p style="font-size:0.72rem;color:var(--muted);">12 esferas = 1 libra</p>
           </div>
-          <div class="c" style="border-left:4px solid var(--goldb);text-align:center;padding:0.7rem;">
-            <h3 style="font-size:1.1rem;color:var(--goldb);margin-bottom:2px;">CALIBRE 20</h3>
-            <p style="font-size:1rem;"><strong>15,6 mm</strong> de diâmetro interno</p>
-            <p style="font-size:0.85rem;color:var(--muted);">Menor recuo · Indicado para iniciantes · 20 esferas = 1 libra</p>
+          <div class="c" style="border-left:4px solid var(--goldb);text-align:center;padding:0.4rem;">
+            <h3 style="font-size:1rem;color:var(--goldb);margin-bottom:1px;">CAL. 20</h3>
+            <p style="font-size:0.92rem;"><strong>15,6 mm</strong></p>
+            <p style="font-size:0.72rem;color:var(--muted);">20 esferas = 1 libra</p>
           </div>
-          <div class="c" style="border-left:4px solid var(--light);text-align:center;padding:0.7rem;">
-            <h3 style="font-size:1rem;color:var(--light);margin-bottom:2px;">CALIBRE 28</h3>
-            <p style="font-size:0.95rem;"><strong>14,0 mm</strong> de diâmetro interno</p>
-            <p style="font-size:0.85rem;color:var(--muted);">Uso esportivo · Menor potência · 28 esferas = 1 libra</p>
+          <div class="c" style="border-left:4px solid var(--light);text-align:center;padding:0.4rem;">
+            <h3 style="font-size:1rem;color:var(--light);margin-bottom:1px;">CAL. 28</h3>
+            <p style="font-size:0.92rem;"><strong>14,0 mm</strong></p>
+            <p style="font-size:0.72rem;color:var(--muted);">28 esferas = 1 libra</p>
           </div>
         </div>
         <div class="c cv">
           <h3 style="color:var(--grn);">📌 Por que o Calibre 12 é o mais utilizado?</h3>
-          <p>O calibre 12 oferece o melhor equilíbrio entre <strong>potência, versatilidade de munição e disponibilidade no mercado brasileiro</strong>. É o padrão das Polícias Militares, forças táticas e o mais acessível para civis registrados (CAC). Aceita desde cartuchos menos letais (borracha, gás) até munição de alto poder de parada (buckshot, slug/balote).</p>
+          <p>Oferece o melhor equilíbrio entre <strong>versatilidade, disponibilidade e custo</strong>. Padrão das PMs, forças táticas e civis CAC. Aceita desde cartuchos menos letais até munição de alto poder de parada.</p>
+        </div>
+        <div class="c ca" style="padding:0.35rem 0.5rem;">
+          <h3 style="font-size:0.82rem;">⚡ Fatores que influenciam o desempenho</h3>
+          <p style="font-size:0.78rem;"><strong>Carga do cartucho:</strong> mais pólvora e projéteis mais pesados geram maior energia. Cargas leves (esportivas) = menos recuo. Cargas pesadas (táticas) = maior poder de parada.</p>
+          <p style="font-size:0.78rem;margin-top:2px;"><strong>Comprimento do cano:</strong> canos mais longos resultam em maior velocidade de saída. Após deixar o cano, o projétil <strong>apenas perde velocidade</strong>.</p>
+          <p style="font-size:0.78rem;margin-top:2px;"><strong>Tipo de munição:</strong> birdshot, buckshot e slug/balote possuem características balísticas completamente diferentes.</p>
         </div>
       </div>
+    </div>
+  
+    <div class="prova">
+      <div class="prova-t">📝 Pergunta de Prova (PF / IAT)</div>
+      <div class="prova-q">No sistema gauge, o que significa afirmar que uma espingarda é "calibre 12"?</div>
+      <div class="prova-o"><strong>A)</strong> O cano possui exatamente 12 milímetros de diâmetro interno.</div>
+      <div class="prova-o correta"><strong>B)</strong> São necessárias 12 esferas de chumbo, com diâmetro igual ao interno do cano, para totalizar 1 libra (453g).</div>
+      <div class="prova-o"><strong>C)</strong> O cartucho padrão contém exatamente 12 projéteis (balins).</div>
+      <div class="prova-o"><strong>D)</strong> A arma possui capacidade máxima de 12 cartuchos no tubo de depósito.</div>
+      <div class="prova-r">✓ Resposta correta: Alternativa B</div>
     </div>
   </div>
 </div>
@@ -988,11 +1067,22 @@ img.clicavel:hover{filter:brightness(1.05);}
       <div style="display:flex;flex-direction:column;gap:0.6rem;">
         <div class="c ca"><h3>📦 Os 5 Componentes do Cartucho (munição)</h3></div>
         <div class="comp"><div class="cdot"></div><div><h4>① Balins — Projéteis (bolinhas de chumbo)</h4><p><strong>Balins</strong> = múltiplas bolinhas de metal, para curta distância. <strong>Slug/Balote</strong> = projétil único pesado, maior alcance.</p></div></div>
-        <div class="comp"><div class="cdot"></div><div><h4>② Estojo (invólucro externo)</h4><p>Tubo de plástico + base metálica. <strong>Une todos os componentes</strong> e veda a câmara.</p></div></div>
-        <div class="comp"><div class="cdot"></div><div><h4>③ Propelente — Pólvora</h4><p>Combustão rápida gera <strong>enorme volume de gás</strong> que empurra os projéteis pelo cano.</p></div></div>
+        <div class="comp"><div class="cdot"></div><div><h4>② Estojo (invólucro externo)</h4><p>Invólucro de plástico com base metálica (culote). <strong>Acondiciona todos os componentes</strong> e assegura a vedação (obturação) na câmara.</p></div></div>
+        <div class="comp"><div class="cdot"></div><div><h4>③ Propelente — Pólvora</h4><p>A combustão controlada do propelente gera <strong>rápida expansão de gases</strong>, que impulsiona os projéteis através do cano. A quantidade de pólvora determina a <strong>energia cinética</strong> transferida ao projétil — cargas maiores resultam em maior velocidade de saída.</p></div></div>
         <div class="comp"><div class="cdot"></div><div><h4>④ Bucha (separador plástico)</h4><p>Fica entre a pólvora e os balins (bolinhas de chumbo). <strong>Sela os gases</strong> e mantém os balins juntos dentro do cano até saírem.</p></div></div>
-        <div class="comp"><div class="cdot"></div><div><h4>⑤ Espoleta (o "isqueiro")</h4><p>O percussor golpeia a espoleta → inicia a combustão da pólvora. <strong>Sem ela, nada acontece.</strong></p></div></div>
+        <div class="comp"><div class="cdot"></div><div><h4>⑤ Espoleta (o iniciador)</h4><p>O percussor (pino de disparo) golpeia a espoleta — inicia a combustão da pólvora. <strong>Sem ela, nada acontece.</strong></p></div></div>
+        <div class="callout callout-prova"><strong>🎯 ATENÇÃO EM PROVA:</strong> O projétil atinge sua velocidade máxima dentro do cano. Após deixar a boca do cano, o projétil <strong>apenas perde velocidade</strong> por resistência do ar e gravidade.</div>
       </div>
+    </div>
+  
+    <div class="prova">
+      <div class="prova-t">📝 Pergunta de Prova (PF / IAT)</div>
+      <div class="prova-q">Qual componente do cartucho é responsável por iniciar a combustão do propelente (pólvora)?</div>
+      <div class="prova-o"><strong>A)</strong> Bucha (separador plástico).</div>
+      <div class="prova-o"><strong>B)</strong> Estojo (invólucro externo).</div>
+      <div class="prova-o correta"><strong>C)</strong> Espoleta (iniciador).</div>
+      <div class="prova-o"><strong>D)</strong> Fecho (tampa superior do estojo).</div>
+      <div class="prova-r">✓ Resposta correta: Alternativa C</div>
     </div>
   </div>
 </div>
@@ -1037,8 +1127,16 @@ img.clicavel:hover{filter:brightness(1.05);}
           <p style="margin-top:3px;"><strong>Número MENOR (ex: 00, 0, 1)</strong> = esfera <strong>MAIOR</strong> = mais potência por bolinha = menos bolinhas no cartucho. Usado em <strong>defesa e policial</strong>.</p>
           <p style="margin-top:3px;"><strong>Número MAIOR (ex: 7, 8, 9)</strong> = esfera <strong>MENOR</strong> = menos potência por bolinha = mais bolinhas no cartucho. Usado em <strong>caça de aves e esporte</strong>.</p>
         </div>
-        <div class="alerta" style="padding:0.3rem 0.6rem;">
-          <p style="font-size:0.82rem;"><strong>Mito:</strong> "espingarda não precisa de pontaria". <strong>Errado.</strong> Em distâncias curtas o espalhamento é pequeno — visada correta é obrigatória.</p>
+        <div class="callout callout-pratica"><strong>💡 NA PRÁTICA:</strong> Carga leve (esportiva) = menos recuo, ideal para treino e competição. Carga pesada (tática/caça) = mais energia, maior poder de parada, mais recuo.</div>
+        <div class="callout callout-erro"><strong>⚠️ ERRO COMUM:</strong> Acreditar que espingarda dispensa pontaria. Em distâncias curtas o espalhamento é pequeno — visada correta é obrigatória.</div>
+        <div class="prova">
+          <div class="prova-t">📝 Pergunta de Prova (PF / IAT)</div>
+          <div class="prova-q">Qual é o efeito prático de utilizar um choke do tipo Full (total) em uma espingarda?</div>
+          <div class="prova-o"><strong>A)</strong> Aumenta a velocidade de saída do projétil e reduz o recuo percebido.</div>
+          <div class="prova-o correta"><strong>B)</strong> Concentra o padrão de dispersão dos balins, aumentando o alcance efetivo.</div>
+          <div class="prova-o"><strong>C)</strong> Reduz o peso total da arma e facilita o manuseio em espaços confinados.</div>
+          <div class="prova-o"><strong>D)</strong> Permite o uso exclusivo de munição tipo Magnum (câmara 76mm).</div>
+          <div class="prova-r">✓ Resposta correta: Alternativa B</div>
         </div>
       </div>
       <!-- DIREITA: CHOKE -->
@@ -1047,16 +1145,19 @@ img.clicavel:hover{filter:brightness(1.05);}
           <h3>🔩 Choke — Estrangulamento do Cano</h3>
           <p>O choke é uma peça na ponta do cano que <strong>controla o quanto os balins se espalham</strong> após o disparo. Quanto mais apertado o choke, menos os balins se espalham — o tiro fica mais concentrado e alcança mais longe.</p>
         </div>
-        <div class="svgb" style="flex:1;min-height:0;">
-          <img src="https://i.imgur.com/Qo3cHeR.jpg" alt="Tipos de Choke — Estrangulamento do cano" style="width:100%;height:auto;object-fit:contain;border-radius:6px;max-height:30vh;">
+        <div class="svgb">
+          <img src="https://i.imgur.com/Qo3cHeR.jpg" alt="Tipos de Choke — Estrangulamento do cano" style="width:100%;height:auto;object-fit:contain;border-radius:6px;max-height:22vh;">
           <p class="figc" style="margin-top:0.2rem;">Tipos de choke (estrangulamento) e seus efeitos na dispersão</p>
         </div>
-        <div class="c cg" style="padding:0.5rem 0.7rem;">
-          <h3>Tipos de Choke (do mais aberto ao mais fechado):</h3>
-          <p><strong>Cylinder (cilíndrico):</strong> sem estrangulamento — maior espalhamento dos balins. Bom para curta distância.</p>
-          <p style="margin-top:3px;"><strong>Improved Cylinder (cilíndrico melhorado):</strong> leve estrangulamento. Uso geral.</p>
-          <p style="margin-top:3px;"><strong>Modified (modificado):</strong> estrangulamento médio. Equilíbrio entre alcance e dispersão.</p>
-          <p style="margin-top:3px;"><strong>Full (total):</strong> máximo estrangulamento — menor espalhamento. Tiro concentrado e mais longe.</p>
+        <div class="c cg" style="padding:0.4rem 0.6rem;">
+          <h3>Tipos de Choke — Comparativo Técnico</h3>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:3px;margin-top:4px;font-size:0.72rem;">
+            <div style="background:rgba(26,85,32,0.08);padding:3px 5px;border-radius:3px;text-align:center;"><strong style="color:var(--grn);">Cylinder</strong><br>Sem restrição<br>Máxima dispersão<br><em>Defesa / CQB</em></div>
+            <div style="background:rgba(191,144,32,0.08);padding:3px 5px;border-radius:3px;text-align:center;"><strong style="color:#8B6000;">Imp. Cylinder</strong><br>Leve restrição<br>Dispersão moderada<br><em>Uso geral / Skeet</em></div>
+            <div style="background:rgba(107,30,0,0.06);padding:3px 5px;border-radius:3px;text-align:center;"><strong style="color:var(--br);">Modified</strong><br>Média restrição<br>Equilíbrio<br><em>Caça / Trap</em></div>
+            <div style="background:rgba(139,16,16,0.06);padding:3px 5px;border-radius:3px;text-align:center;"><strong style="color:var(--red);">Full</strong><br>Máxima restrição<br>Mínima dispersão<br><em>Longo alcance</em></div>
+          </div>
+          <div class="callout callout-pratica" style="margin-top:4px;"><strong>💡 NA PRÁTICA:</strong> O choke deve ser escolhido conforme o emprego. Defesa residencial usa Cylinder (máximo espalhamento em curta distância). Caça de aves usa Modified ou Full (concentração para maior alcance).</div>
         </div>
       </div>
     </div>
@@ -1098,7 +1199,7 @@ img.clicavel:hover{filter:brightness(1.05);}
         <div class="empb">
           <div class="badge">Defesa Pessoal</div>
           <h3>Defesa</h3>
-          <p>Utilizada para proteção pessoal e residencial, com alta eficiência em curtas distâncias.<br>
+          <p>Utilizada para proteção pessoal e residencial, com elevado poder de parada em curtas distâncias.<br>
           <strong>Cano:</strong> curto, geralmente entre 14" e 20"<br>
           <strong>Munição:</strong> buckshot (balins maiores) e slug/balote (projétil único)<br>
           <strong>Exemplo:</strong> CBC Military 3.0, CBC Pump Action 586</p>
@@ -1109,7 +1210,7 @@ img.clicavel:hover{filter:brightness(1.05);}
         <div class="empb">
           <div class="badge">Cinegético</div>
           <h3>Caça</h3>
-          <p>Empregada na atividade cinegética para abate de animais autorizados, conforme legislação ambiental.<br>
+          <p>Empregada na atividade cinegética para abate de espécies autorizadas, em conformidade com a legislação ambiental vigente.<br>
           <strong>Cano:</strong> médio a longo, entre 24" e 28"<br>
           <strong>Munição:</strong> birdshot (balins pequenos), podendo variar conforme a caça<br>
           <strong>Exemplo:</strong> CBC Pump Action 586, Boito Miura I<br>
@@ -1138,6 +1239,16 @@ img.clicavel:hover{filter:brightness(1.05);}
           <strong>Exemplo:</strong> CBC Military 3.0, CBC Pump Action 586</p>
         </div>
       </div>
+    </div>
+  
+    <div class="prova">
+      <div class="prova-t">📝 Pergunta de Prova (PF / IAT)</div>
+      <div class="prova-q">Para emprego em defesa residencial, qual configuração de espingarda é tecnicamente mais adequada?</div>
+      <div class="prova-o"><strong>A)</strong> Cano longo (28") com choke Full e munição birdshot (balins pequenos).</div>
+      <div class="prova-o correta"><strong>B)</strong> Cano curto (14" a 20") com munição buckshot (balins grandes) ou slug/balote.</div>
+      <div class="prova-o"><strong>C)</strong> Cano longo (30") sem choke e munição menos letal (borracha).</div>
+      <div class="prova-o"><strong>D)</strong> Qualquer configuração é igualmente eficaz, pois a espingarda dispensa pontaria precisa.</div>
+      <div class="prova-r">✓ Resposta correta: Alternativa B</div>
     </div>
   </div>
 </div>
@@ -1238,6 +1349,16 @@ img.clicavel:hover{filter:brightness(1.05);}
       </div>
 
     </div>
+  
+    <div class="prova">
+      <div class="prova-t">📝 Pergunta de Prova (PF / IAT)</div>
+      <div class="prova-q">Qual é a principal diferença no posicionamento da trava de segurança entre a Remington 870 e a Mossberg 590A1?</div>
+      <div class="prova-o"><strong>A)</strong> A Remington possui trava no topo do receptáculo; a Mossberg, atrás do guarda-mato.</div>
+      <div class="prova-o correta"><strong>B)</strong> A Mossberg possui trava no topo do receptáculo (acionada pelo polegar, ambidestra); a Remington, atrás do guarda-mato (cruzeta).</div>
+      <div class="prova-o"><strong>C)</strong> Ambas possuem trava no mesmo local, diferindo apenas no formato do acionador.</div>
+      <div class="prova-o"><strong>D)</strong> A Remington não possui trava de segurança; utiliza apenas o sistema de meia-armação.</div>
+      <div class="prova-r">✓ Resposta correta: Alternativa B</div>
+    </div>
   </div>
 </div>
 </section>
@@ -1262,6 +1383,15 @@ img.clicavel:hover{filter:brightness(1.05);}
         <div class="gen"><div class="gn" style="color:var(--grn);">3</div><div><h4>Remover Telha e Ferrolho</h4><p>Com o cano removido, puxar a telha para frente até soltar. O ferrolho sai junto ou separado, dependendo do modelo.</p></div></div>
         <div class="gen"><div class="gn" style="color:var(--grn);">4</div><div><h4>Limpar Cada Peça</h4><p>Passar solvente no cano (vareta + escova). Limpar receptáculo com pano. Limpar ferrolho e extrator. Secar tudo.</p></div></div>
         <div class="gen"><div class="gn" style="color:var(--grn);">5</div><div><h4>Lubrificar e Remontar</h4><p>Aplicar óleo fino nos trilhos do ferrolho, hastes da corrediça e articulações. Remontar na ordem inversa. Testar a ação.</p></div></div>
+        <div class="prova">
+          <div class="prova-t">📝 Pergunta de Prova (PF / IAT)</div>
+          <div class="prova-q">Na desmontagem de 1º escalão de uma espingarda pump, qual a sequência correta?</div>
+          <div class="prova-o"><strong>A)</strong> Remover ferrolho, retirar cano, soltar telha.</div>
+          <div class="prova-o correta"><strong>B)</strong> Descarregar, remover porca do tubo, retirar cano, puxar telha, retirar ferrolho.</div>
+          <div class="prova-o"><strong>C)</strong> Retirar telha, soltar gatilho, remover cano.</div>
+          <div class="prova-o"><strong>D)</strong> Descarregar, retirar ferrolho, remover cano, soltar telha.</div>
+          <div class="prova-r">✓ Resposta: Alternativa B</div>
+        </div>
       </div>
       <!-- COLUNA DIREITA: Quando e Como -->
       <div style="display:flex;flex-direction:column;gap:0.5rem;">
@@ -1283,6 +1413,7 @@ img.clicavel:hover{filter:brightness(1.05);}
         </div>
         <div class="alerta">
           <p>⚠️ <strong>Cartilha PF:</strong> A manutenção preventiva é responsabilidade do proprietário. Arma mal conservada pode falhar no momento crítico e causar acidentes graves.</p>
+          <div class="callout callout-pratica" style="margin-top:3px;"><strong>💡 NA PRÁTICA:</strong> Após cada sessão de tiro, limpeza básica do cano e inspeção visual. Manutenção completa a cada 500 disparos.</div>
         </div>
       </div>
     </div>
@@ -1315,12 +1446,22 @@ img.clicavel:hover{filter:brightness(1.05);}
         <div class="c cg">
           <h3>💡 Dica Prática</h3>
           <p>Antes de sair de casa: verifique se a arma está descarregada, coloque no estojo, munição em bolsa separada, confira CR/CRAF e identidade no bolso. Na dúvida, <strong>não transporte</strong>.</p>
+          <div class="callout callout-erro" style="margin-top:3px;"><strong>⚠️ ERRO COMUM:</strong> Transportar a arma dentro de mochila comum ou bolsa não específica. O estojo deve ser próprio para arma de fogo, fechado e que impeça o acesso direto.</div>
         </div>
       </div>
     </div>
     <div class="alerta" style="padding:0.7rem 1rem;border-width:3px;border-left:5px solid var(--red);background:rgba(139,16,16,.08);margin-top:0.5rem;">
       <p style="font-size:0.95rem;text-align:center;"><strong>⚠️ TRANSPORTE IRREGULAR DE ARMA = CRIME</strong></p>
       <p style="font-size:0.9rem;text-align:center;margin-top:3px;">Art. 14 da Lei 10.826/2003 (Estatuto do Desarmamento). <strong>Pena: 2 a 4 anos de reclusão + multa.</strong></p>
+    </div>
+    <div class="prova" style="margin-top:0.8rem;">
+      <div class="prova-t">📝 Pergunta de Prova (PF / IAT)</div>
+      <div class="prova-q">Conforme a Lei 10.826/2003, qual é a pena prevista para transporte irregular de arma de fogo?</div>
+      <div class="prova-o"><strong>A)</strong> Multa administrativa de R$ 5.000,00.</div>
+      <div class="prova-o"><strong>B)</strong> Detenção de 6 meses a 1 ano.</div>
+      <div class="prova-o correta"><strong>C)</strong> Reclusão de 2 a 4 anos e multa.</div>
+      <div class="prova-o"><strong>D)</strong> Advertência verbal e apreensão temporária da arma.</div>
+      <div class="prova-r">✓ Resposta correta: Alternativa C</div>
     </div>
   </div>
 </div>
@@ -1358,6 +1499,15 @@ img.clicavel:hover{filter:brightness(1.05);}
       <p style="font-size:0.95rem;text-align:center;"><strong>⚠️ OMISSÃO DE CAUTELA NA GUARDA = CRIME</strong></p>
       <p style="font-size:0.9rem;text-align:center;margin-top:3px;">Art. 13 do Estatuto do Desarmamento — se outra pessoa (inclusive menor) acessar a arma por negligência do proprietário. <strong>Pena: 1 a 3 anos de detenção + multa.</strong></p>
     </div>
+    <div class="prova" style="margin-top:0.8rem;">
+      <div class="prova-t">📝 Pergunta de Prova (PF / IAT)</div>
+      <div class="prova-q">Conforme o Art. 13 do Estatuto do Desarmamento, o que configura o crime de omissão de cautela na guarda de arma de fogo?</div>
+      <div class="prova-o"><strong>A)</strong> Armazenar a arma em cofre sem fixação na parede.</div>
+      <div class="prova-o correta"><strong>B)</strong> Permitir o acesso de pessoa não autorizada (inclusive menor) à arma, por negligência do proprietário.</div>
+      <div class="prova-o"><strong>C)</strong> Guardar arma e munição no mesmo cômodo da residência.</div>
+      <div class="prova-o"><strong>D)</strong> Não realizar manutenção preventiva a cada 6 meses.</div>
+      <div class="prova-r">✓ Resposta correta: Alternativa B</div>
+    </div>
   </div>
 </div>
 </section>
@@ -1370,13 +1520,14 @@ img.clicavel:hover{filter:brightness(1.05);}
   <div class="sline"></div>
   <div class="content">
     <div class="g2" style="flex:1;min-height:0;">
-      <!-- COLUNA ESQUERDA: Dogmas + Regras -->
+      <!-- COLUNA ESQUERDA: Dogmas + Regras + Pergunta -->
       <div style="display:flex;flex-direction:column;gap:0.5rem;justify-content:center;">
         <div class="dogma" style="padding:0.6rem;">
           <div class="dog-i">🔫</div>
           <div class="dog-n">DOGMA 1 — PF</div>
           <div class="dog-t">Controle do Cano</div>
           <p>Cano <strong>sempre para direção segura</strong> — manuseio, inspeção, limpeza, transporte. <strong>Sem exceção.</strong></p>
+          <div class="callout callout-erro"><strong>⚠️ ERRO COMUM:</strong> Apontar o cano para cima ou para o chão durante inspeção. A direção segura é aquela onde, em caso de disparo acidental, não haja risco para ninguém.</div>
         </div>
         <div class="dogma" style="padding:0.6rem;">
           <div class="dog-i">☝️</div>
@@ -1389,11 +1540,16 @@ img.clicavel:hover{filter:brightness(1.05);}
           <p><strong>1.</strong> Trate toda arma como carregada — sem exceção.<br>
           <strong>2.</strong> Nunca aponte para algo que não pretende destruir.<br>
           <strong>3.</strong> Conheça o alvo e o que está atrás dele.<br>
-          <strong>4.</strong> Seguro (trava) pode falhar — nunca substitui as regras.</p>
+          <strong>4.</strong> Trava de segurança pode falhar — nunca substitui as regras.</p>
         </div>
-        <div class="c" style="border-top:3px solid var(--goldb);">
-          <h3>🏛️ Legislação no Brasil</h3>
-          <p><strong>Lei 10.826/2003</strong> + <strong>Decreto 9.847/2019</strong>. Cofre trancado, arma e munição separadas, longe de crianças. Zero álcool ou substâncias psicoativas.</p>
+        <div class="prova">
+          <div class="prova-t">📝 Pergunta de Prova (PF / IAT)</div>
+          <div class="prova-q">Segundo os dogmas de segurança da PF, quais são as duas regras invioláveis?</div>
+          <div class="prova-o"><strong>A)</strong> Usar protetor auricular e óculos de proteção.</div>
+          <div class="prova-o correta"><strong>B)</strong> Controle permanente da direção do cano e dedo fora do gatilho até o momento do disparo.</div>
+          <div class="prova-o"><strong>C)</strong> Verificar a arma antes e depois de cada uso e limpar o cano após cada sessão.</div>
+          <div class="prova-o"><strong>D)</strong> Manter a arma sempre travada e nunca transportar munição junto.</div>
+          <div class="prova-r">✓ Resposta correta: Alternativa B</div>
         </div>
       </div>
       <!-- COLUNA DIREITA: Fundamentos do Tiro -->
@@ -1405,8 +1561,8 @@ img.clicavel:hover{filter:brightness(1.05);}
         <div class="gen"><div class="gn" style="color:var(--grn);">1</div><div><h4>Posição / Empunhadura</h4><p>Pés na largura dos ombros, coronha firme no ombro, mão de apoio na telha. Corpo inclinado à frente para absorver recuo.</p></div></div>
         <div class="gen"><div class="gn" style="color:var(--grn);">2</div><div><h4>Visada (pontaria)</h4><p>Alinhar <strong>massa de mira + alça de mira + alvo</strong>. Olho dominante aberto, foco na massa de mira.</p></div></div>
         <div class="gen"><div class="gn" style="color:var(--grn);">3</div><div><h4>Respiração</h4><p>Expirar parcialmente e <strong>pausar a respiração</strong> no momento do disparo. Evita tremor.</p></div></div>
-        <div class="gen"><div class="gn" style="color:var(--grn);">4</div><div><h4>Acionamento do Gatilho</h4><p>Pressionar com a <strong>ponta do dedo indicador (falange distal)</strong>, de forma progressiva e suave. Nunca puxar de uma vez — apertar aos poucos até o disparo.</p></div></div>
-        <div class="gen"><div class="gn" style="color:var(--grn);">5</div><div><h4>Acompanhamento — Follow-through (manter a posição)</h4><p>Manter posição e visada <strong>após o disparo</strong>. Não relaxar na hora do tiro. Avaliar onde acertou e corrigir se precisar.</p></div></div>
+        <div class="gen"><div class="gn" style="color:var(--grn);">4</div><div><h4>Acionamento do Gatilho</h4><p>Pressionar com a <strong>ponta do dedo indicador (falange distal)</strong>, de forma progressiva e suave. Nunca puxar de uma vez.</p></div></div>
+        <div class="gen"><div class="gn" style="color:var(--grn);">5</div><div><h4>Acompanhamento — Follow-through (manter a posição)</h4><p>Manter posição e visada <strong>após o disparo</strong>. Não relaxar na hora do tiro. Avaliar onde acertou.</p></div></div>
         <div class="gen"><div class="gn" style="color:var(--grn);">6</div><div><h4>Controle do Recuo</h4><p>Coronha bem encaixada no ombro + inclinação para frente = controle. Nunca coronha solta.</p></div></div>
       </div>
     </div>
@@ -1427,14 +1583,12 @@ img.clicavel:hover{filter:brightness(1.05);}
     <!-- Instagram -->
     <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:0.8rem;">
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;fill:var(--goldb);"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-      <a href="https://www.instagram.com/ricardo_taira/" target="_blank" style="color:var(--goldb);text-decoration:none;font-size:1rem;letter-spacing:1.5px;font-weight:600;">@ricardo_taira</a>
+      <span style="color:var(--goldb);font-size:1rem;letter-spacing:1.5px;font-weight:600;">@ricardo_taira</span>
     </div>
     <!-- QR Code grande no centro -->
     <div style="display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:0.8rem;">
-      <a href="https://www.instagram.com/ricardo_taira/" target="_blank">
-        <img src="https://i.imgur.com/EWPRLDm.png" alt="QR Code — Instagram @ricardo_taira" style="width:clamp(180px,25vw,260px);height:clamp(180px,25vw,260px);border-radius:12px;border:3px solid var(--goldb);">
-      </a>
-      <p style="font-size:0.88rem;color:var(--muted);letter-spacing:1px;">📱 Escaneie ou clique para acessar o Instagram</p>
+      <img src="https://i.imgur.com/EWPRLDm.png" alt="QR Code — Instagram @ricardo_taira" class="qr-nolight" style="width:clamp(220px,28vw,300px);height:clamp(220px,28vw,300px);border-radius:14px;border:3px solid var(--goldb);box-shadow:0 4px 20px rgba(0,0,0,0.12);">
+      <p style="font-size:0.88rem;color:var(--br);letter-spacing:1.5px;background:rgba(255,255,255,0.85);padding:4px 16px;border-radius:20px;border:1px solid var(--goldb);font-weight:600;">📱 Escaneie o QR Code para acessar o Instagram</p>
     </div>
     <!-- Frase no final -->
     <div style="margin-top:0.3rem;">
@@ -1592,7 +1746,7 @@ const lb=document.getElementById('lightbox');
 const lbImg=document.getElementById('lbImg');
 const lbLeg=document.getElementById('lbLeg');
 
-document.querySelectorAll('.slide img').forEach(img=>{
+document.querySelectorAll('.slide img:not(.qr-nolight)').forEach(img=>{
   img.classList.add('clicavel');
   img.addEventListener('click',function(e){
     e.stopPropagation();
